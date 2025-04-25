@@ -116,22 +116,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 <div class="right-contact-innrer">
 <div class="successmsg" style="display:none;"></div>
 
-<form action="contact-form.php" class="main_contact-form" method="post">
-<div class="col-md-6 fmdv"><label>Name</label> <input class="form-control fltxt" name="flname" required="" type="text" /></div>
+<form action="https://formspree.io/f/mwpopeav" method="POST" class="main_contact-form">
+  <div class="col-md-6 fmdv">
+      <label>Name</label>
+      <input class="form-control fltxt" name="name" required type="text" />
+  </div>
 
-<div class="col-md-6 fmdv"><label>Email Address</label> <input class="form-control fltxt" name="flemail" required="" type="email" /></div>
+  <div class="col-md-6 fmdv">
+      <label>Email Address</label>
+      <input class="form-control fltxt" name="_replyto" required type="email" />
+  </div>
 
-<div class="clear"></div>
+  <div class="clear"></div>
 
-<div class="col-sm-12 fmdv"><label>Subject</label> <input class="form-control flsubject" name="fsubject" required="" type="text" /></div>
+  <div class="col-sm-12 fmdv">
+      <label>Subject</label>
+      <input class="form-control flsubject" name="subject" required type="text" />
+  </div>
 
-<div class="clear"></div>
+  <div class="clear"></div>
 
-<div class="col-sm-12 fmdv"><label>Message</label> <!-- <input type="text" name="fsubject" class="form-control flmessage"> --><textarea class="form-control flmessage" cols="3" name="flmessage"></textarea></div>
+  <div class="col-sm-12 fmdv">
+      <label>Message</label>
+      <textarea class="form-control flmessage" name="message" required></textarea>
+  </div>
 
-<div class="clear"></div>
+  <div class="clear"></div>
 
-<div class="col-sm-12 "><input class="btn btn-secondary" name="flsubmit" type="submit" value="Submit" /></div>
+  <!-- Anti-spam -->
+  <input type="text" name="_gotcha" style="display:none" />
+  
+  <div class="col-sm-12">
+      <input class="btn btn-secondary" type="submit" value="Submit" />
+  </div>
 </form>
 </div>
 </div>
@@ -175,5 +192,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     setTimeout(function () {
       $(".load6").fadeIn();
     }, 2000);
-  </script><script src="js/popper.js"></script><script src="js/bootstrap.min.js"></script><script src="js/main.js"></script></body>
+  </script><script src="js/popper.js"></script><script src="js/bootstrap.min.js"></script><script src="js/main.js"></script>
+  <script>
+    var form = document.querySelector('.main_contact-form');
+    var successMsg = document.querySelector('.successmsg');
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(form);
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            successMsg.style.display = 'block';
+            successMsg.innerHTML = 'Thank you! Your message has been sent successfully.';
+            successMsg.style.color = 'green';
+            form.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        })
+        .catch(error => {
+            successMsg.style.display = 'block';
+            successMsg.innerHTML = 'Oops! There was a problem sending your message.';
+            successMsg.style.color = 'red';
+            
+            // Hide error message after 5 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        });
+    });
+</script></body>
 </html>
