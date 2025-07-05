@@ -261,8 +261,11 @@ s .tooltip {
     position: absolute;
     bottom: 2vh;
     -webkit-transition-property: background-image;
-    -webkit-transition-duration: 1.0s;
+    transition-property: background-image;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
     -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
 }
 
 .dark-mode .footer {
