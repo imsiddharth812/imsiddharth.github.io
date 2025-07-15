@@ -430,6 +430,7 @@
             padding: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            width: 100%;  /* Ensure full width */
         }
 
         .skill-category:hover {
@@ -455,25 +456,33 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             padding: 0.8rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .skill-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+            width: 100%;  /* Ensure full width */
+            flex-wrap: wrap;  /* Allow wrapping if needed */
+            gap: 0.5rem;  /* Add gap for wrapped items */
         }
 
         .skill-name {
             font-weight: 500;
             color: var(--text-light);
+            margin-right: 1rem;
+            flex: 1;
+            min-width: 120px;  /* Minimum width before wrapping */
+            max-width: calc(100% - 160px);  /* Maximum width to ensure space for progress bar */
+            white-space: normal;  /* Allow text wrapping */
+            word-wrap: break-word;  /* Break long words if needed */
+            line-height: 1.2;  /* Adjust line height for wrapped text */
         }
 
         .skill-level {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            width: 140px;  /* Fixed width instead of min-width */
+            flex-shrink: 0;  /* Prevent shrinking */
+            justify-content: flex-end;  /* Align to the right */
         }
 
         .skill-bar {
@@ -483,6 +492,7 @@
             border-radius: 3px;
             overflow: hidden;
             position: relative;
+            flex-shrink: 0;
         }
 
         .skill-progress {
@@ -495,7 +505,15 @@
         .skill-percentage {
             font-size: 0.8rem;
             color: var(--text-gray);
-            min-width: 35px;
+            width: 35px;  /* Fixed width instead of min-width */
+            text-align: right;
+            flex-shrink: 0;  /* Prevent shrinking */
+        }
+
+        /* Ensure last item doesn't have margin */
+        .skill-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
         }
 
         /* Certification badges */
@@ -1278,6 +1296,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Let's Work Together</a>
                     <a href="#portfolio" class="btn btn-secondary">View My Work</a>
+                    <a href="Siddharth_Thathagar_Resume.pdf" class="btn btn-secondary" target="_blank">View My CV</a>
                 </div>
             </div>
         </div>
@@ -1292,37 +1311,49 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🔍</div>
-                    <h3 class="service-title">Manual Testing</h3>
-                    <p class="service-description">Comprehensive manual testing strategies ensuring every user interaction is flawless.</p>
+                    <h3 class="service-title">Precision Testing</h3>
+                    <p class="service-description">Rooted in discipline, driven by detail. Manual testing isn't about clicking through screens — it's about thinking like the end user while knowing how systems break. I design thoughtful test cases that uncover edge cases, verify workflows, and deliver high product confidence.</p>
                     <ul class="service-features">
-                        <li>Functional Testing</li>
-                        <li>Usability Testing</li>
-                        <li>Cross-browser Testing</li>
-                        <li>Mobile Testing</li>
+                        <li>Exploratory & Scenario-based Testing</li>
+                        <li>Cross-device, Cross-browser Validations</li>
+                        <li>Accessibility & Usability Checks</li>
+                        <li>Mobile Web & App Testing on Real Devices</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3 class="service-title">Test Automation</h3>
-                    <p class="service-description">Cutting-edge automation frameworks that accelerate testing and improve reliability.</p>
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Automation with Intent</h3>
+                    <p class="service-description">Code-backed confidence that scales with your growth. I don't automate for the sake of it. I build purposeful automation frameworks that integrate tightly with your dev pipeline, catch regressions early, and reduce repetitive work.</p>
                     <ul class="service-features">
-                        <li>Selenium WebDriver</li>
-                        <li>API Testing</li>
-                        <li>CI/CD Integration</li>
-                        <li>Performance Testing</li>
+                        <li>Playwright, Selenium, API Automation</li>
+                        <li>Custom-built POM Frameworks</li>
+                        <li>GitHub Actions / Jenkins CI Pipelines</li>
+                        <li>Intelligent Test Reporting & Notifications</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3 class="service-title">QA Strategy</h3>
-                    <p class="service-description">Strategic quality assurance planning that aligns with your business objectives.</p>
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">Quality Engineering Mindset</h3>
+                    <p class="service-description">Beyond test cases — shaping how teams think about quality. As a QA strategist, I partner with product and engineering teams to embed quality into every stage of the SDLC. I help teams ask better questions, make smarter decisions, and deliver better software.</p>
                     <ul class="service-features">
-                        <li>Test Planning</li>
-                        <li>Process Optimization</li>
-                        <li>Team Training</li>
-                        <li>Quality Metrics</li>
+                        <li>Risk-based Test Strategy</li>
+                        <li>Metrics that inform, not just report</li>
+                        <li>Test Planning in Agile & Hybrid Environments</li>
+                        <li>Mentorship & QA Process Consulting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Special Focus Areas</h3>
+                    <p class="service-description">Because great testers go beyond the checklist. I specialize in complex testing scenarios that require deep technical knowledge and strategic thinking.</p>
+                    <ul class="service-features">
+                        <li>API-First & Microservices Testing</li>
+                        <li>Security & Data Validation Scenarios</li>
+                        <li>Mobile-Responsive UX Audits</li>
+                        <li>Post-release Testing & Hotfix Verification</li>
                     </ul>
                 </div>
             </div>
@@ -1333,7 +1364,7 @@
     <section class="skills" id="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
-            <p class="section-subtitle">Comprehensive expertise across modern testing technologies and methodologies</p>
+            <p class="section-subtitle">A curated stack of tools and technologies I work with across manual testing, automation, and QA processes.</p>
             
             <div class="skills-grid">
                 <div class="skill-category">
@@ -1351,15 +1382,6 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Cypress</span>
-                        <div class="skill-level">
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
                         <span class="skill-name">Playwright</span>
                         <div class="skill-level">
                             <div class="skill-bar">
@@ -1369,12 +1391,12 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">TestNG/JUnit</span>
+                        <span class="skill-name">Cypress</span>
                         <div class="skill-level">
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 92%"></div>
+                                <div class="skill-progress" style="width: 90%"></div>
                             </div>
-                            <span class="skill-percentage">92%</span>
+                            <span class="skill-percentage">90%</span>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1386,11 +1408,38 @@
                             <span class="skill-percentage">80%</span>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <span class="skill-name">TestNG / JUnit</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 86%"></div>
+                            </div>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">
-                        <span class="skill-category-icon">🎯</span>
+                        <span class="skill-category-icon">🧪</span>
                         Manual Testing
                     </h3>
                     <div class="skill-item">
@@ -1421,7 +1470,7 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">User Acceptance Testing</span>
+                        <span class="skill-name">User Acceptance Testing (UAT)</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 93%"></div>
@@ -1438,22 +1487,22 @@
                             <span class="skill-percentage">94%</span>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Mobile Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 89%"></div>
+                            </div>
+                            <span class="skill-percentage">89%</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">
-                        <span class="skill-category-icon">⚡</span>
-                        Performance & API
+                        <span class="skill-category-icon">🌐</span>
+                        API Testing
                     </h3>
-                    <div class="skill-item">
-                        <span class="skill-name">JMeter</span>
-                        <div class="skill-level">
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                            <span class="skill-percentage">88%</span>
-                        </div>
-                    </div>
                     <div class="skill-item">
                         <span class="skill-name">Postman</span>
                         <div class="skill-level">
@@ -1473,28 +1522,28 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">LoadRunner</span>
+                        <span class="skill-name">JSON Schema Validation</span>
                         <div class="skill-level">
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
+                                <div class="skill-progress" style="width: 85%"></div>
                             </div>
-                            <span class="skill-percentage">75%</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">K6</span>
+                        <span class="skill-name">OAuth / Bearer Token / Auth Testing</span>
                         <div class="skill-level">
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 82%"></div>
+                                <div class="skill-progress" style="width: 83%"></div>
                             </div>
-                            <span class="skill-percentage">82%</span>
+                            <span class="skill-percentage">83%</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3 class="skill-category-title">
-                        <span class="skill-category-icon">🛠️</span>
+                        <span class="skill-category-icon">⚙️</span>
                         Tools & Technologies
                     </h3>
                     <div class="skill-item">
@@ -1516,7 +1565,7 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Git/GitHub</span>
+                        <span class="skill-name">Git / GitHub</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 91%"></div>
@@ -1540,6 +1589,24 @@
                                 <div class="skill-progress" style="width: 78%"></div>
                             </div>
                             <span class="skill-percentage">78%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">VS Code</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 94%"></div>
+                            </div>
+                            <span class="skill-percentage">94%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Chrome DevTools</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
                         </div>
                     </div>
 
