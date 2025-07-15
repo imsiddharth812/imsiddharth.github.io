@@ -500,6 +500,8 @@
             background: var(--gradient-primary);
             border-radius: 3px;
             transition: width 1s ease;
+            will-change: width;  /* Optimize for animation */
+            transform: translateZ(0);  /* Force hardware acceleration */
         }
 
         .skill-percentage {
@@ -514,6 +516,39 @@
         .skill-item:last-child {
             margin-bottom: 0;
             border-bottom: none;
+        }
+
+        /* Improve mobile performance */
+        @media (max-width: 768px) {
+            .skill-progress {
+                transition: width 1.2s ease;  /* Slightly slower on mobile */
+            }
+            
+            .skill-bar {
+                width: 80px;  /* Smaller width on mobile */
+                height: 8px;  /* Slightly taller for better visibility */
+            }
+
+            .skill-level {
+                gap: 0.3rem;
+            }
+
+            .skill-percentage {
+                font-size: 0.75rem;
+                min-width: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-bar {
+                width: 70px;  /* Even smaller on very small screens */
+                height: 8px;
+            }
+
+            .skill-percentage {
+                font-size: 0.7rem;
+                min-width: 30px;
+            }
         }
 
         /* Certification badges */
@@ -1895,7 +1930,10 @@
                     });
                 }
             });
-        }, observerOptions);
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
         // Observe skill categories for progress bar animation
         document.querySelectorAll('.skill-category').forEach(el => {
