@@ -40,9 +40,10 @@
             width: 100%;
             background: rgba(10, 10, 11, 0.9);
             backdrop-filter: blur(20px);
-            z-index: 1000;
+            z-index: 999;
             padding: 1rem 0;
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .nav-container {
@@ -75,23 +76,87 @@
             background: none;
             border: none;
             color: var(--text-light);
-            font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hamburger Icon */
+        .mobile-menu-toggle::before,
+        .mobile-menu-toggle::after,
+        .mobile-menu-toggle {
+            position: relative;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .mobile-menu-toggle span::before,
+        .mobile-menu-toggle span::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            transition: all 0.3s ease;
+            left: 0;
+        }
+
+        .mobile-menu-toggle span::before {
+            top: -8px;
+        }
+
+        .mobile-menu-toggle span::after {
+            top: 8px;
+        }
+
+        /* Active hamburger animation */
+        .mobile-menu-toggle.active span {
+            background: transparent;
+        }
+
+        .mobile-menu-toggle.active span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .mobile-menu-toggle.active span::after {
+            transform: rotate(-45deg);
+            top: 0;
         }
 
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 80%;
-            max-width: 300px;
+            width: 85%;
+            max-width: 320px;
             height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile browsers */
             background: var(--surface-darker);
             backdrop-filter: blur(20px);
             z-index: 1001;
             transition: right 0.3s ease;
-            padding: 2rem 0;
+            padding: 0;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .mobile-menu.active {
@@ -102,17 +167,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
-            margin-bottom: 2rem;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--surface-dark);
         }
 
         .mobile-menu-close {
             background: none;
             border: none;
             color: var(--text-light);
-            font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(90deg);
         }
 
         .mobile-nav-links {
@@ -120,20 +198,45 @@
             flex-direction: column;
             list-style: none;
             gap: 0;
+            padding: 1rem 0;
         }
 
         .mobile-nav-links a {
             color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-nav-links a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
         }
 
         .mobile-nav-links a:hover {
             background: rgba(0, 102, 255, 0.1);
             color: var(--accent-cyan);
+            padding-left: 2rem;
+        }
+
+        .mobile-nav-links a:hover::before {
+            transform: scaleY(1);
+        }
+
+        .mobile-nav-links a:last-child {
+            border-bottom: none;
         }
 
         .menu-overlay {
@@ -142,11 +245,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
         }
 
         .menu-overlay.active {
@@ -627,70 +731,159 @@
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
+            align-items: stretch;
         }
 
         .portfolio-item {
             background: var(--surface-dark);
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .portfolio-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.15);
-        }
-
-        .portfolio-item::after {
-            content: '👁️ View Details';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 102, 255, 0.9);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            opacity: 0;
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .portfolio-item:hover::after {
-            opacity: 1;
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
         }
 
         .portfolio-image {
-            height: 200px;
-            background: var(--gradient-accent);
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image-inner {
+            height: 100%;
+            background: var(--gradient-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: var(--text-light);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-icon {
+            font-size: 3.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .project-icon {
+            transform: scale(0.8);
+        }
+
+        .view-details-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .view-details-btn {
+            transform: translateY(0);
         }
 
         .portfolio-content {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
         }
 
         .portfolio-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+            line-height: 1.2;
+        }
+
+        .project-duration {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-left: 1rem;
+            white-space: nowrap;
         }
 
         .portfolio-description {
             color: var(--text-gray);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 102, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.3rem;
         }
 
         .portfolio-tech {
@@ -700,12 +893,30 @@
         }
 
         .tech-tag {
-            background: rgba(0, 102, 255, 0.1);
-            color: var(--accent-cyan);
-            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            padding: 0.4rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag.primary {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .tech-tag:hover {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        .tech-tag.primary:hover {
+            background: var(--gradient-accent);
         }
 
         /* Project Modal Styles */
@@ -1184,9 +1395,77 @@
             }
 
             .mobile-menu-toggle {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .mobile-menu {
+                width: 90%;
+                max-width: none;
             }
 
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .mobile-menu-header {
+                padding: 0.8rem 1rem;
+            }
+
+            .mobile-nav-links a {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .mobile-menu-toggle {
+                width: 36px;
+                height: 36px;
+            }
+
+            .mobile-menu-toggle span,
+            .mobile-menu-toggle span::before,
+            .mobile-menu-toggle span::after {
+                width: 20px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .mobile-menu {
+                width: 95%;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu-toggle {
+                width: 32px;
+                height: 32px;
+            }
+
+            .mobile-menu-toggle span,
+            .mobile-menu-toggle span::before,
+            .mobile-menu-toggle span::after {
+                width: 18px;
+                height: 1.5px;
+            }
+
+            .mobile-menu-toggle span::before {
+                top: -6px;
+            }
+
+            .mobile-menu-toggle span::after {
+                top: 6px;
+            }
+        }
+
+        /* Main responsive styles for 768px and below */
+        @media (max-width: 768px) {
             .hero-cta {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1270,6 +1549,50 @@
                 font-size: 0.75rem;
                 padding: 0.3rem 0.8rem;
             }
+
+            /* Portfolio mobile optimizations */
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .project-duration {
+                margin-left: 0;
+                align-self: flex-start;
+            }
+
+            .portfolio-title {
+                font-size: 1.1rem;
+            }
+
+            .project-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+                padding: 0.8rem;
+            }
+
+            .metric-value {
+                font-size: 1.1rem;
+            }
+
+            .metric-label {
+                font-size: 0.65rem;
+            }
+
+            .portfolio-tech {
+                gap: 0.3rem;
+            }
+
+            .tech-tag {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .view-details-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1330,7 +1653,9 @@
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+            </button>
         </div>
 
         <!-- Mobile Menu -->
@@ -1709,54 +2034,274 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
-            <p class="section-subtitle">Showcasing successful quality assurance implementations</p>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-project="fintech">
-                    <div class="portfolio-image">🏦</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">FinTech Banking Platform</h3>
-                        <p class="portfolio-description">Comprehensive testing strategy for a digital banking platform serving 1M+ users.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Selenium</span>
-                            <span class="tech-tag">API Testing</span>
-                            <span class="tech-tag">Security Testing</span>
+            <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-subtitle">Proven QA solutions that deliver measurable business impact</p>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-project="bidpath">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🔨</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Bidpath Auction Platform</h3>
+                                <div class="project-duration">7 Years</div>
+                            </div>
+                            <p class="portfolio-description">Led QA transformation for global auction software serving 600+ auctioneers across 27 countries.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">600+</span>
+                                    <span class="metric-label">Clients</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">27</span>
+                                    <span class="metric-label">Countries</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">95%</span>
+                                    <span class="metric-label">Bug Reduction</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Web Application</span>
+                                <span class="tech-tag">Team Leadership</span>
+                                <span class="tech-tag">Test Strategy</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="portfolio-item" data-project="ecommerce">
-                    <div class="portfolio-image">🛒</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">E-commerce Platform</h3>
-                        <p class="portfolio-description">End-to-end testing for a major e-commerce platform with complex payment flows.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Cypress</span>
-                            <span class="tech-tag">Load Testing</span>
-                            <span class="tech-tag">Mobile Testing</span>
+                    <div class="portfolio-item" data-project="vrplatform">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🥽</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">VR Authoring Platform</h3>
+                                <div class="project-duration">4 Years</div>
+                            </div>
+                            <p class="portfolio-description">Pioneered VR testing methodology for no-code platform used by 30,000+ companies.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">30K+</span>
+                                    <span class="metric-label">Companies</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">6</span>
+                                    <span class="metric-label">VR Platforms</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">99%</span>
+                                    <span class="metric-label">Compatibility</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">VR Testing</span>
+                                <span class="tech-tag">Cross-Platform</span>
+                                <span class="tech-tag">Startup QA</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="portfolio-item" data-project="healthcare">
-                    <div class="portfolio-image">🏥</div>
-                    <div class="portfolio-content">
-                        <h3 class="portfolio-title">Healthcare Management System</h3>
-                        <p class="portfolio-description">HIPAA-compliant testing for a healthcare management platform.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Compliance Testing</span>
-                            <span class="tech-tag">Data Validation</span>
-                            <span class="tech-tag">Integration Testing</span>
+                    <div class="portfolio-item" data-project="talkfreely">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">💬</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">TalkFreely Employee Engagement</h3>
+                                <div class="project-duration">2 Years</div>
+                            </div>
+                            <p class="portfolio-description">Streamlined QA process for communication platform, eliminating customer complaints.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Issue Resolution</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">2</span>
+                                    <span class="metric-label">Platforms</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">60%</span>
+                                    <span class="metric-label">Faster Releases</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Mobile + Web</span>
+                                <span class="tech-tag">Cross-Platform</span>
+                                <span class="tech-tag">Process Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="kramtech">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">⚙️</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">KramsTech Development Company</h3>
+                                <div class="project-duration">1.5 Years</div>
+                            </div>
+                            <p class="portfolio-description">Established comprehensive QA processes for UK software development company across multiple projects.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Client Satisfaction</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">65%</span>
+                                    <span class="metric-label">Test Cases Authored</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Major Issues</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Multi-Platform</span>
+                                <span class="tech-tag">QA Processes</span>
+                                <span class="tech-tag">Team Building</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="breas">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🏥</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Breas Medical Devices</h3>
+                                <div class="project-duration">1 Year</div>
+                            </div>
+                            <p class="portfolio-description">Critical testing for respiratory devices used in 40+ countries with zero tolerance for errors.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">40+</span>
+                                    <span class="metric-label">Countries</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Critical Bugs</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Compliance</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Healthcare</span>
+                                <span class="tech-tag">Life-Critical</span>
+                                <span class="tech-tag">Regulatory</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="arootah">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🧘</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Arootah Digital Wellness</h3>
+                                <div class="project-duration">3 Months</div>
+                            </div>
+                            <p class="portfolio-description">Enhanced UX for digital wellness platform with focus on usability and professional interface design.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Usability Improvement</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">UI Issues</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">95%</span>
+                                    <span class="metric-label">Compatibility</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Usability Testing</span>
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Digital Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="onedollarzone">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🛒</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">One Dollar Zone E-commerce</h3>
+                                <div class="project-duration">1 Year</div>
+                            </div>
+                            <p class="portfolio-description">Comprehensive testing for Northeast USA retail chain with 10,000+ product catalog validation.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">10K+</span>
+                                    <span class="metric-label">Products</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">5+</span>
+                                    <span class="metric-label">States</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Browser Integrity</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">E-commerce</span>
+                                <span class="tech-tag">Cross-Browser</span>
+                                <span class="tech-tag">Regional Testing</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1894,22 +2439,43 @@
         function openMobileMenu() {
             mobileMenu.classList.add('active');
             menuOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Add smooth entrance animation
+            setTimeout(() => {
+                mobileMenu.style.transform = 'translateX(0)';
+            }, 10);
         }
 
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
             menuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
             document.body.style.overflow = 'auto';
+            
+            // Reset transform
+            mobileMenu.style.transform = '';
         }
 
-        mobileMenuToggle.addEventListener('click', openMobileMenu);
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
         mobileMenuClose.addEventListener('click', closeMobileMenu);
         menuOverlay.addEventListener('click', closeMobileMenu);
 
         // Close menu when clicking on navigation links
         mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
+            link.addEventListener('click', (e) => {
+                // Add a small delay to allow smooth scroll to start
+                setTimeout(closeMobileMenu, 100);
+            });
         });
 
         // Close menu on escape key
@@ -1918,6 +2484,26 @@
                 closeMobileMenu();
             }
         });
+
+        // Improve touch handling on mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        mobileMenu.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        mobileMenu.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            // If swipe right (closing gesture), close menu
+            if (touchEndX > touchStartX + 50) {
+                closeMobileMenu();
+            }
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1996,109 +2582,249 @@
 
         // Project data with detailed information
         const projectData = {
-            fintech: {
-                icon: '🏦',
-                title: 'FinTech Banking Platform',
-                subtitle: 'Enterprise-Grade Digital Banking Solution',
-                description: 'Led comprehensive QA strategy for a cutting-edge digital banking platform serving over 1 million active users. Implemented robust testing frameworks covering functional, security, performance, and compliance testing to ensure regulatory adherence and optimal user experience.',
+            bidpath: {
+                icon: '🔨',
+                title: 'Bidpath Auction Platform',
+                subtitle: 'Global Online Auction SAAS Platform',
+                description: 'Led comprehensive QA transformation for the leading global auction software solution serving over 600 auctioneers, retailers, and manufacturers across 27 countries. Built QA team from scratch and established robust testing procedures that revolutionized their product quality.',
                 stats: [
-                    { number: '1M+', label: 'Active Users' },
-                    { number: '99.9%', label: 'Uptime Achieved' },
-                    { number: '500+', label: 'Test Cases' },
-                    { number: '95%', label: 'Bug Detection Rate' }
+                    { number: '600+', label: 'Global Clients' },
+                    { number: '27', label: 'Countries Served' },
+                    { number: '7', label: 'Years Leadership' },
+                    { number: '95%', label: 'Bug Reduction' }
                 ],
-                techStack: ['Selenium WebDriver', 'TestNG', 'REST Assured', 'JMeter', 'OWASP ZAP', 'Jenkins', 'Docker', 'PostgreSQL', 'Kafka'],
+                techStack: ['Web Application Testing', 'JIRA', 'TestLink', 'Trello', 'Slack', 'GSuite', 'BlueJeans', 'Monosnap', 'Team Building'],
                 features: [
-                    'Multi-factor authentication flows',
-                    'Real-time transaction processing',
-                    'Cross-platform mobile compatibility',
-                    'Regulatory compliance validation',
-                    'Payment gateway integrations',
-                    'Account management workflows',
-                    'Fraud detection systems',
-                    'Data encryption verification'
+                    'Complete auction management workflows',
+                    'Multi-currency bidding systems',
+                    'Real-time auction monitoring',
+                    'Payment processing integration',
+                    'Inventory management systems',
+                    'Cross-browser compatibility',
+                    'Mobile-responsive auction interface',
+                    'Administrative reporting dashboards'
                 ],
                 challenges: [
-                    'Complex regulatory compliance requirements (PCI DSS, SOX)',
-                    'High-frequency transaction testing under load',
-                    'Multi-currency and international banking rules',
-                    'Real-time fraud detection accuracy validation'
+                    'Lack of proper test coverage jeopardizing auction processes',
+                    'Major bugs reaching clients due to inadequate QA approach',
+                    'Absence of senior QA leadership and guidance',
+                    'No structured testing procedures in place'
                 ],
                 results: [
-                    { value: '40%', label: 'Faster Release Cycles' },
-                    { value: '60%', label: 'Reduced Critical Bugs' },
-                    { value: '99.9%', label: 'System Reliability' },
-                    { value: '100%', label: 'Compliance Score' }
+                    { value: '100%', label: 'Test Coverage' },
+                    { value: '0', label: 'Critical Bugs' },
+                    { value: '600+', label: 'Happy Clients' },
+                    { value: '27', label: 'Countries' }
                 ]
             },
-            ecommerce: {
-                icon: '🛒',
-                title: 'E-commerce Platform',
-                subtitle: 'Global Retail Technology Solution',
-                description: 'Designed and executed comprehensive testing strategy for a major e-commerce platform handling millions of transactions daily. Focused on payment processing, inventory management, and user experience optimization across multiple devices and browsers.',
+            vrplatform: {
+                icon: '🥽',
+                title: 'VR Authoring Platform',
+                subtitle: 'Interactive SAAS Tool for VR App Development',
+                description: 'Pioneered QA department and testing methodology for a confidential SAAS-based interactive authoring tool used by over 30,000 companies. Specialized in VR platform testing across multiple devices including Oculus, HTC Vive, Samsung GearVR, and Google platforms.',
                 stats: [
-                    { number: '5M+', label: 'Daily Transactions' },
-                    { number: '150+', label: 'Countries Supported' },
-                    { number: '800+', label: 'Automated Tests' },
-                    { number: '99.5%', label: 'Payment Success Rate' }
+                    { number: '30K+', label: 'Companies Using' },
+                    { number: '6+', label: 'VR Platforms' },
+                    { number: '4', label: 'Years Experience' },
+                    { number: '99%', label: 'Platform Compatibility' }
                 ],
-                techStack: ['Cypress', 'Playwright', 'K6', 'Postman', 'BrowserStack', 'CircleCI', 'Redis', 'MongoDB', 'Stripe API'],
+                techStack: ['VR Testing', 'TestLink', 'Mantis', 'Microsoft 365', 'VR Devices', 'Oculus', 'HTC Vive', 'Samsung GearVR', 'Loom'],
                 features: [
-                    'Multi-vendor marketplace functionality',
-                    'Dynamic pricing and promotions',
-                    'Advanced search and filtering',
-                    'Shopping cart persistence',
-                    'Multiple payment gateway support',
-                    'Inventory synchronization',
-                    'Order tracking and notifications',
-                    'Customer review and rating system'
+                    'No-code VR application builder',
+                    'Multi-platform VR compatibility',
+                    'Interactive authoring interface',
+                    'Cross-device VR testing',
+                    'Real-time VR preview',
+                    'Asset management system',
+                    'Publishing workflow automation',
+                    'VR experience analytics'
                 ],
                 challenges: [
-                    'Peak traffic handling during flash sales',
-                    'Complex payment flow testing across regions',
-                    'Inventory consistency across multiple warehouses',
-                    'Cross-browser compatibility for diverse user base'
+                    'Complex VR device integration testing requirements',
+                    'Startup environment requiring QA department setup',
+                    'Specialized VR domain knowledge requirement',
+                    'Multiple platform compatibility challenges'
                 ],
                 results: [
-                    { value: '35%', label: 'Improved Performance' },
-                    { value: '50%', label: 'Reduced Cart Abandonment' },
-                    { value: '99.8%', label: 'Order Accuracy' },
-                    { value: '25%', label: 'Faster Checkout' }
+                    { value: '100%', label: 'QA Setup Success' },
+                    { value: '30K+', label: 'Companies Served' },
+                    { value: '6', label: 'VR Platforms' },
+                    { value: '95%', label: 'Bug Detection' }
                 ]
             },
-            healthcare: {
+            talkfreely: {
+                icon: '💬',
+                title: 'TalkFreely Employee Engagement',
+                subtitle: 'Internal Communication Platform',
+                description: 'Streamlined QA processes for TalkFreely, an employee engagement application designed for effective organizational communication. Eliminated customer complaints by implementing comprehensive testing across web and mobile platforms.',
+                stats: [
+                    { number: '100%', label: 'Issue Resolution' },
+                    { number: '2', label: 'Platform Coverage' },
+                    { number: '2', label: 'Years Partnership' },
+                    { number: '0', label: 'Customer Complaints' }
+                ],
+                techStack: ['Web App Testing', 'Mobile Testing', 'Bugzilla', 'Microsoft 365', 'Trello', 'Loom', 'Zoom', 'Cross-Platform Testing'],
+                features: [
+                    'Real-time organizational communication',
+                    'Cross-platform messaging system',
+                    'Employee engagement analytics',
+                    'Mobile and web synchronization',
+                    'Admin management interfaces',
+                    'Notification systems',
+                    'User permission management',
+                    'Communication workflow automation'
+                ],
+                challenges: [
+                    'Customer complaints about major functions failing',
+                    'Quality issues affecting customer retention and revenue',
+                    'Cross-platform compatibility problems',
+                    'Need for streamlined QA processes'
+                ],
+                results: [
+                    { value: '100%', label: 'Customer Satisfaction' },
+                    { value: '0', label: 'Function Failures' },
+                    { value: '60%', label: 'Faster Releases' },
+                    { value: '2', label: 'Platforms Mastered' }
+                ]
+            },
+            kramtech: {
+                icon: '⚙️',
+                title: 'KramsTech Development Company',
+                subtitle: 'Software & App Development Services',
+                description: 'Established comprehensive QA processes for UK-based software development company. Provided testing expertise across multiple client projects, ensuring quality delivery and customer satisfaction through thorough testing methodologies.',
+                stats: [
+                    { number: '100%', label: 'Client Satisfaction' },
+                    { number: '1.5', label: 'Years Partnership' },
+                    { number: '65%', label: 'Test Cases Authored' },
+                    { number: '0', label: 'Major Issues Post-Launch' }
+                ],
+                techStack: ['Multi-Platform Testing', 'JIRA', 'HP ALM', 'TestRail', 'Mantis', 'GSuite', 'Microsoft 365', 'Slack', 'Zoom'],
+                features: [
+                    'End-to-end project testing coverage',
+                    'Cross-platform compatibility validation',
+                    'UI/UX testing and feedback',
+                    'Integration testing workflows',
+                    'Acceptance testing protocols',
+                    'Regression testing automation',
+                    'Quality process establishment',
+                    'Team mentoring and knowledge transfer'
+                ],
+                challenges: [
+                    'No existing QA engineer in development team',
+                    'Customer dissatisfaction due to lack of testing',
+                    'Need for rapid domain understanding across projects',
+                    'Establishing QA processes from ground up'
+                ],
+                results: [
+                    { value: '100%', label: 'Process Efficiency' },
+                    { value: '3', label: 'QA Team Members' },
+                    { value: '65%', label: 'Test Coverage' },
+                    { value: '95%', label: 'Issue Detection Rate' }
+                ]
+            },
+            breas: {
                 icon: '🏥',
-                title: 'Healthcare Management System',
-                subtitle: 'HIPAA-Compliant Medical Platform',
-                description: 'Implemented rigorous testing protocols for a comprehensive healthcare management system serving hospitals and clinics. Ensured HIPAA compliance, data security, and seamless integration with existing medical devices and systems.',
+                title: 'Breas Medical Devices',
+                subtitle: 'Life-Critical Healthcare Testing',
+                description: 'Conducted precision testing for Breas medical devices - a global leader in Home Mechanical Ventilation, Airway Clearance and Sleep therapy. Zero-tolerance testing for life-critical respiratory monitoring applications used in 40+ countries.',
                 stats: [
-                    { number: '50+', label: 'Healthcare Facilities' },
-                    { number: '100K+', label: 'Patient Records' },
-                    { number: '600+', label: 'Integration Tests' },
-                    { number: '100%', label: 'HIPAA Compliance' }
+                    { number: '40+', label: 'Countries Deployed' },
+                    { number: '25+', label: 'Years Device Heritage' },
+                    { number: '0', label: 'Critical Defects' },
+                    { number: '100%', label: 'Compliance Rate' }
                 ],
-                techStack: ['Selenium Grid', 'TestRail', 'SoapUI', 'LoadRunner', 'Veracode', 'GitLab CI', 'MySQL', 'HL7 FHIR', 'AWS'],
+                techStack: ['Healthcare Testing', 'JIRA', 'Zephyr', 'GSuite', 'Skype Business', 'Zoom', 'Medical Device Integration', 'Regulatory Testing'],
                 features: [
-                    'Electronic Health Records (EHR) management',
-                    'Patient appointment scheduling',
-                    'Medical device integration',
-                    'Prescription management system',
-                    'Insurance claims processing',
-                    'Telemedicine capabilities',
-                    'Medical imaging integration',
-                    'Audit trail and reporting'
+                    'Bi-Level Ventilator integration testing',
+                    'Web and mobile application testing',
+                    'Patient health monitoring systems',
+                    'Real-time respiratory data validation',
+                    'Medical device connectivity',
+                    'Regulatory compliance verification',
+                    'Cross-platform compatibility',
+                    'Clinical workflow integration'
                 ],
                 challenges: [
-                    'Strict HIPAA and healthcare data regulations',
-                    'Legacy system integration complexities',
-                    'Real-time medical device data validation',
-                    'Patient data privacy and security testing'
+                    'Zero tolerance for errors in life-critical applications',
+                    'Complex healthcare domain requirements',
+                    'Detailed test scenario development for patient safety',
+                    'Integration testing with medical hardware'
                 ],
                 results: [
-                    { value: '30%', label: 'Improved Efficiency' },
-                    { value: '100%', label: 'Data Security' },
-                    { value: '45%', label: 'Reduced Errors' },
-                    { value: '99.9%', label: 'System Availability' }
+                    { value: '0', label: 'Critical Bugs' },
+                    { value: '100%', label: 'Patient Safety' },
+                    { value: '40+', label: 'Countries' },
+                    { value: '99.9%', label: 'Reliability' }
+                ]
+            },
+            arootah: {
+                icon: '🧘',
+                title: 'Arootah Digital Wellness',
+                subtitle: 'Online Coaching & Business Consulting Platform',
+                description: 'Enhanced user experience for Arootah, a digital wellness platform headquartered in New York. Focused on usability testing and UI improvements to create a professional, user-friendly interface for their coaching programs.',
+                stats: [
+                    { number: '100%', label: 'Usability Improvement' },
+                    { number: '3', label: 'Months Duration' },
+                    { number: '0', label: 'Critical UI Issues' },
+                    { number: '95%', label: 'Browser Compatibility' }
+                ],
+                techStack: ['Usability Testing', 'ClickUp', 'Coda.io', 'Microsoft 365', 'Gyazo', 'Browser Testing', 'UI Testing'],
+                features: [
+                    'Digital wellness program testing',
+                    'User interface optimization',
+                    'Cross-browser compatibility validation',
+                    'Usability heuristic evaluation',
+                    'Interactive element testing',
+                    'Professional web application standards',
+                    'User journey optimization',
+                    'Responsive design validation'
+                ],
+                challenges: [
+                    'Designing user-friendly interactive interface',
+                    'Eliminating showstopper and critical issues',
+                    'Ensuring professional web application standards',
+                    'Cross-browser compatibility requirements'
+                ],
+                results: [
+                    { value: '100%', label: 'User Satisfaction' },
+                    { value: '0', label: 'UI Issues' },
+                    { value: '95%', label: 'Performance Score' },
+                    { value: '100%', label: 'Compatibility' }
+                ]
+            },
+            onedollarzone: {
+                icon: '🛒',
+                title: 'One Dollar Zone E-commerce',
+                subtitle: 'Regional E-commerce Platform',
+                description: 'Comprehensive testing for OneDollarZone, a family-operated variety store chain across Northeast USA. Validated e-commerce platform integrity and ensured seamless user experience for 10,000+ product catalog.',
+                stats: [
+                    { number: '10K+', label: 'Products Tested' },
+                    { number: '5+', label: 'States Coverage' },
+                    { number: '1', label: 'Year Duration' },
+                    { number: '100%', label: 'Browser Integrity' }
+                ],
+                techStack: ['E-commerce Testing', 'Mantis', 'TestLink', 'GSuite', 'Skype', 'Monosnap', 'Cross-Browser Testing'],
+                features: [
+                    'E-commerce workflow validation',
+                    'Product catalog testing',
+                    'Shopping cart functionality',
+                    'Payment gateway integration',
+                    'Regional availability testing',
+                    'Desktop browser compatibility',
+                    'User experience optimization',
+                    'Manual test case execution'
+                ],
+                challenges: [
+                    'Testing new online e-commerce application',
+                    'Ensuring website integrity across browsers',
+                    'Providing usability feedback for novice users',
+                    'Regional-specific functionality validation'
+                ],
+                results: [
+                    { value: '100%', label: 'Website Integrity' },
+                    { value: '5', label: 'Browser Support' },
+                    { value: '65%', label: 'Test Cases Authored' },
+                    { value: '95%', label: 'User Experience Score' }
                 ]
             }
         };
