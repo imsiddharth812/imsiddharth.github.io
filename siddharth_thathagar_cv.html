@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Thathagar - QA Consultant</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 30px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-info .title {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #e74c3c;
+        }
+
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 30px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+        }
+
+        .experience-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #3498db, #e74c3c);
+            border-radius: 2px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .company {
+            font-size: 1em;
+            color: #3498db;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+
+        .duration {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .achievements li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .degree {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .languages {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .language {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+        }
+
+        .language:hover {
+            transform: scale(1.05);
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* PDF-specific styles for better page breaks */
+        @media print {
+            .experience-item,
+            .education-item,
+            .skill-category,
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .section-title {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            .experience-header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+            
+            .achievements {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            
+            .achievements li {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .profile-img {
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">📄 Download PDF</button>
+    <div class="container">
+        <div class="header">
+            <div class="profile-section">
+                <img src="sid_round.png" alt="Siddharth Thathagar" class="profile-img">
+                <div class="profile-info">
+                    <h1>Siddharth Thathagar</h1>
+                    <div class="title">Senior QA Consultant & Testing Expert</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>Gandhinagar, Gujarat, India</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <span>+91 937 572 7273</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span>sid@imsiddharth.io</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            <span>linkedin.com/in/siddharthqaexpert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <div class="summary">
+                    Seasoned QA Consultant with 12+ years of comprehensive experience in software testing and quality assurance. Proven track record of delivering exceptional quality products across diverse industries including healthcare, telecom, e-commerce, and VR/AR applications. Expert in both manual and automated testing methodologies with a passion for creating bug-free, user-centric solutions.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Testing Expertise</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Automated Testing</span>
+                            <span class="skill-tag">Testing using AI Tools</span>
+                            <span class="skill-tag">Manual Testing</span>
+                            <span class="skill-tag">API Testing</span>
+                            <span class="skill-tag">Integration Testing</span>
+                            <span class="skill-tag">Functional Testing</span>
+                            <span class="skill-tag">Regression Testing</span>
+                            <span class="skill-tag">UI Testing</span>
+                            <span class="skill-tag">Usability Testing</span>
+                            <span class="skill-tag">End-to-End Testing</span>
+                            <span class="skill-tag">Compatibility Testing</span>
+
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Platforms & Devices</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Web Applications</span>
+                            <span class="skill-tag">Mobile (iOS/Android)</span>
+                            <span class="skill-tag">Desktop Applications</span>
+                            <span class="skill-tag">VR/AR Applications</span>
+                            <span class="skill-tag">Cross-browser/device/platform Testing</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">Playwright</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Appium</span>
+                            <span class="skill-tag">Typescript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JIRA</span>
+                            <span class="skill-tag">HP ALM</span>
+                            <span class="skill-tag">VIsual Studio Code</span>
+                            <span class="skill-tag">PyCharm</span>
+                            <span class="skill-tag">Cursor</span>
+                            <span class="skill-tag">pytest</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Methodologies</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Agile</span>
+                            <span class="skill-tag">Scrum</span>
+                            <span class="skill-tag">SDLC</span>
+                            <span class="skill-tag">STLC</span>
+                            <span class="skill-tag">DevOps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Senior QA Consultant</div>
+                            <div class="company">Freelance Consultant</div>
+                        </div>
+                        <div class="duration">Dec 2013 - Present</div>
+                    </div>
+                    <div class="location">Gandhinagar, Gujarat, India</div>
+                    <ul class="achievements">
+                        <li>Delivered comprehensive QA services to 15+ clients including Bidpath Inc, Talkfreely Ltd, InstaVR Inc, and Arootah, spanning healthcare, telecom, e-commerce, and VR/AR domains</li>
+                        <li>Executed end-to-end testing strategies for web applications, mobile apps (iOS/Android), and VR platforms including Oculus, HTC Vive, and Windows Mixed Reality</li>
+                        <li>Implemented agile testing methodologies with 15-day sprint cycles, improving product delivery timelines by 30%</li>
+                        <li>Designed and maintained comprehensive test documentation, resulting in 95% defect detection rate</li>
+                        <li>Led offshore testing teams and coordinated with global stakeholders for seamless project execution</li>
+                        <li>Reduced critical bugs in production by 80% through rigorous testing protocols and quality gates</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Associate Software Test Engineer</div>
+                            <div class="company">Allscripts Healthcare Solutions</div>
+                        </div>
+                        <div class="duration">Sep 2013 - Nov 2013</div>
+                    </div>
+                    <div class="location">Vadodara, Gujarat, India</div>
+                    <ul class="achievements">
+                        <li>Collaborated with cross-functional teams to ensure healthcare application compliance with industry standards</li>
+                        <li>Performed comprehensive testing including smoke, functional, regression, and UI testing</li>
+                        <li>Maintained defect tracking systems and facilitated resolution processes with development teams</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">QA Engineer</div>
+                            <div class="company">Cygnet Infotech Pvt Ltd</div>
+                        </div>
+                        <div class="duration">Feb 2012 - Aug 2013</div>
+                    </div>
+                    <div class="location">Ahmedabad, Gujarat, India</div>
+                    <ul class="achievements">
+                        <li>Established quality assurance standards and best practices across multiple project teams</li>
+                        <li>Developed comprehensive test strategies based on requirement analysis and user stories</li>
+                        <li>Mentored junior QA team members and contributed to knowledge sharing initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="job-title">Software Test Engineer</div>
+                            <div class="company">StayinFront India Inc</div>
+                        </div>
+                        <div class="duration">Jan 2010 - Aug 2011</div>
+                    </div>
+                    <div class="location">Gandhinagar, Gujarat, India</div>
+                    <ul class="achievements">
+                        <li>Executed functional, UI, and compatibility testing for enterprise software solutions</li>
+                        <li>Performed comprehensive usability testing across desktop and mobile platforms</li>
+                        <li>Maintained 99% test case execution accuracy while handling 3+ concurrent projects annually</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="education-item">
+                    <div class="degree">Master of Computer Applications</div>
+                    <div class="institution">IGNOU, New Delhi (2007-2010)</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Bachelor of Commerce</div>
+                    <div class="institution">Bhavnagar University, Gujarat (2004-2007)</div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">ISTQB Certified Tester: Foundation Level</div>
+                    <div class="institution">Indian Testing Board, Noida</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages">
+                    <span class="language">English</span>
+                    <span class="language">Hindi</span>
+                    <span class="language">Gujarati</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function downloadPDF() {
+            try {
+                // Method 1: Try using browser's native print API (better page breaks)
+                if (window.chrome && window.chrome.webstore) {
+                    await printToPDF();
+                } else {
+                    // Method 2: Fallback to html2canvas with smarter sectioning
+                    await generatePDFWithSections();
+                }
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Sorry, there was an error generating the PDF. Please try again.');
+            }
+        }
+
+        async function printToPDF() {
+            // Hide the download button temporarily
+            const downloadBtn = document.querySelector('.download-btn');
+            downloadBtn.style.display = 'none';
+            
+            // Create a print-friendly version
+            const printWindow = window.open('', '_blank');
+            const htmlContent = document.documentElement.outerHTML;
+            
+            printWindow.document.write(htmlContent);
+            printWindow.document.close();
+            
+            // Wait for content to load
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Hide download button in print window
+            const printBtn = printWindow.document.querySelector('.download-btn');
+            if (printBtn) printBtn.style.display = 'none';
+            
+            // Trigger print dialog
+            printWindow.print();
+            
+            // Clean up
+            setTimeout(() => {
+                printWindow.close();
+                downloadBtn.style.display = 'block';
+            }, 2000);
+        }
+
+        async function generatePDFWithSections() {
+            // Hide the download button temporarily
+            const downloadBtn = document.querySelector('.download-btn');
+            downloadBtn.style.display = 'none';
+            
+            // Get individual sections
+            const sections = [
+                document.querySelector('.header'),
+                document.querySelector('.summary').parentElement,
+                document.querySelector('.skills-grid').parentElement,
+                ...document.querySelectorAll('.experience-item'),
+                document.querySelector('.education-item').parentElement,
+                document.querySelector('.languages').parentElement
+            ];
+            
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210;
+                let currentY = 0;
+                const pageHeight = 280;
+                let isFirstPage = true;
+                
+                for (const section of sections) {
+                    if (!section) continue;
+                    
+                    const canvas = await html2canvas(section, {
+                        scale: 2,
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: '#ffffff'
+                    });
+                    
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                    
+                    // Check if we need a new page
+                    if (!isFirstPage && currentY + imgHeight > pageHeight) {
+                        pdf.addPage();
+                        currentY = 0;
+                    }
+                    
+                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, currentY, imgWidth, imgHeight);
+                    currentY += imgHeight + 5; // Add small gap between sections
+                    isFirstPage = false;
+                }
+                
+                pdf.save('Siddharth_Thathagar_CV.pdf');
+                
+            } catch (error) {
+                console.error('Error in section-based PDF generation:', error);
+                // Final fallback - simple html2canvas
+                await fallbackPDFGeneration();
+            } finally {
+                downloadBtn.style.display = 'block';
+            }
+        }
+
+        async function fallbackPDFGeneration() {
+            const container = document.querySelector('.container');
+            const canvas = await html2canvas(container, {
+                scale: 2,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff'
+            });
+            
+            const imgWidth = 210;
+            const pageHeight = 280;
+            const imgHeight = (canvas.height * imgWidth) / canvas.width;
+            let heightLeft = imgHeight;
+            
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            
+            let position = 0;
+            pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+            
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                pdf.addPage();
+                pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+            
+            pdf.save('Siddharth_Thathagar_CV.pdf');
+        }
+    </script>
+</body>
+</html>
