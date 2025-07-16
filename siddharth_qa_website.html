@@ -280,6 +280,44 @@
             color: var(--primary-dark);
         }
 
+        .btn-cv {
+            background: var(--gradient-accent);
+            color: var(--text-light);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-cv:hover::before {
+            left: 100%;
+        }
+
+        .btn-cv:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-cv .cv-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-cv:hover .cv-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
         /* Floating Elements */
         .floating-element {
             position: absolute;
@@ -1331,7 +1369,9 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Let's Work Together</a>
                     <a href="#portfolio" class="btn btn-secondary">View My Work</a>
-                    <a href="Siddharth_Thathagar_Resume.pdf" class="btn btn-secondary" target="_blank">View My CV</a>
+                    <a href="Siddharth_Thathagar_Resume.pdf" class="btn btn-cv" target="_blank">
+                        <span class="cv-icon">📄</span>View My CV
+                    </a>
                 </div>
             </div>
         </div>
@@ -1380,7 +1420,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <!-- <div class="service-card">
                     <div class="service-icon">🎯</div>
                     <h3 class="service-title">Special Focus Areas</h3>
                     <p class="service-description">Because great testers go beyond the checklist. I specialize in complex testing scenarios that require deep technical knowledge and strategic thinking.</p>
@@ -1390,7 +1430,7 @@
                         <li>Mobile-Responsive UX Audits</li>
                         <li>Post-release Testing & Hotfix Verification</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -1413,7 +1453,7 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 95%"></div>
                             </div>
-                            <span class="skill-percentage">95%</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1422,15 +1462,6 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 85%"></div>
                             </div>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Cypress</span>
-                        <div class="skill-level">
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
                             <span class="skill-percentage">90%</span>
                         </div>
                     </div>
@@ -1438,13 +1469,22 @@
                         <span class="skill-name">Appium</span>
                         <div class="skill-level">
                             <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                                <div class="skill-progress" style="width: 90%"></div>
                             </div>
-                            <span class="skill-percentage">80%</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">TestNG / JUnit</span>
+                        <span class="skill-name">PyTest</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Page Object Model</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 92%"></div>
@@ -1458,7 +1498,7 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 88%"></div>
                             </div>
-                            <span class="skill-percentage">88%</span>
+                            <span class="skill-percentage">93%</span>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1467,7 +1507,7 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 86%"></div>
                             </div>
-                            <span class="skill-percentage">86%</span>
+                            <span class="skill-percentage">95%</span>
                         </div>
                     </div>
                 </div>
@@ -1505,30 +1545,30 @@
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">User Acceptance Testing (UAT)</span>
+                        <span class="skill-name">Functional Testing</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 93%"></div>
                             </div>
-                            <span class="skill-percentage">93%</span>
+                            <span class="skill-percentage">98%</span>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Cross-browser Testing</span>
+                        <span class="skill-name">Web App Testing</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 94%"></div>
                             </div>
-                            <span class="skill-percentage">94%</span>
+                            <span class="skill-percentage">96%</span>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Mobile Testing</span>
+                        <span class="skill-name">Mobile App Testing</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 89%"></div>
                             </div>
-                            <span class="skill-percentage">89%</span>
+                            <span class="skill-percentage">93%</span>
                         </div>
                     </div>
                 </div>
@@ -1545,6 +1585,15 @@
                                 <div class="skill-progress" style="width: 92%"></div>
                             </div>
                             <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Swagger</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1587,16 +1636,16 @@
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 96%"></div>
                             </div>
-                            <span class="skill-percentage">96%</span>
+                            <span class="skill-percentage">90%</span>
                         </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">TestRail</span>
+                        <span class="skill-name">HP Quality Center</span>
                         <div class="skill-level">
                             <div class="skill-bar">
                                 <div class="skill-progress" style="width: 89%"></div>
                             </div>
-                            <span class="skill-percentage">89%</span>
+                            <span class="skill-percentage">86%</span>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1645,7 +1694,7 @@
                         </div>
                     </div>
 
-                    <div class="certifications">
+                    <!-- <div class="certifications">
                         <h4 class="certification-title">Certifications</h4>
                         <div class="certification-badges">
                             <span class="certification-badge">ISTQB Foundation</span>
@@ -1654,7 +1703,7 @@
                             <span class="certification-badge">Agile Testing</span>
                             <span class="certification-badge">AWS Cloud Practitioner</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
