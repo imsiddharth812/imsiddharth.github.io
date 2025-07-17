@@ -2363,7 +2363,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" action="https://formspree.io/f/xdkogqpv" method="POST">
+                <form class="contact-form" action="https://formspree.io/f/mwpopeav" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -2380,14 +2380,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <!-- Hidden field to specify recipient -->
-                    <input type="hidden" name="_to" value="sid@imsiddharth.io">
-                    <!-- Hidden field to set custom subject -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission from QA Website">
-                    <!-- Redirect after successful submission -->
-                    <input type="hidden" name="_next" value="https://imsiddharth.io/siddharth_qa_website.html?success=true#contact">
-                    <!-- Disable captcha -->
-                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Anti-spam field -->
+                    <input type="text" name="_gotcha" style="display:none">
                     
                     <button type="submit" class="btn btn-primary" id="submit-btn">
                         <span class="btn-text">Send Message</span>
@@ -2571,40 +2565,63 @@
 
         // Form submission handling
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
             const submitBtn = document.getElementById('submit-btn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoading = submitBtn.querySelector('.btn-loading');
+            const formMessage = document.getElementById('form-message');
             
             // Show loading state
             btnText.style.display = 'none';
             btnLoading.style.display = 'inline';
             submitBtn.disabled = true;
             
-            // Allow form to submit naturally to Formspree
-            // The form will handle the actual submission
-        });
-
-        // Check URL for success parameter (when returning from Formspree)
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const formMessage = document.getElementById('form-message');
+            // Submit form via AJAX
+            const formData = new FormData(this);
             
-            if (urlParams.get('success') === 'true') {
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show success message
                 formMessage.innerHTML = '✨ Thank you for your message! I\'ll get back to you soon.';
                 formMessage.className = 'form-message success';
                 formMessage.style.display = 'block';
                 
-                // Clear URL parameters after showing message
-                const url = new URL(window.location);
-                url.searchParams.delete('success');
-                window.history.replaceState({}, '', url);
+                // Reset form
+                this.reset();
                 
                 // Hide message after 5 seconds
                 setTimeout(() => {
                     formMessage.style.display = 'none';
                 }, 5000);
-            }
+            })
+            .catch(error => {
+                // Show error message
+                formMessage.innerHTML = '❌ Oops! There was a problem sending your message. Please try again.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            })
+            .finally(() => {
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            });
         });
+
+
 
         // Animate elements on scroll
         const observerOptions = {
