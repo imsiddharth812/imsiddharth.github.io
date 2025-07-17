@@ -1,267 +1,2988 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NV3XH2K');</script>   
-<!-- End Google Tag Manager -->
-  <title>Siddharth Thathagar | Software QA Consultant</title>
-  
- <meta name="title" content="Siddharth Thathagar | Software QA Consultant">  
-<meta name="description" content="Hi, I am Siddharth, A Freelance Software QA and Testing Consultant. My aim is to provide an excellent service to clients and utilize my skills in software quality assurance and testing industry.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth Thathagar | Elite QA Consultant & Testing Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="Siddharth Thathagar | Software QA Consultant">
-<meta itemprop="description" content="Hi, I am Siddharth, A Freelance Software QA and Testing Consultant. My aim is to provide an excellent service to clients and utilize my skills in software quality assurance and testing industry.">
-<meta itemprop="image" content="">
+        :root {
+            --primary-dark: #0a0a0b;
+            --primary-blue: #0066ff;
+            --accent-cyan: #00d4ff;
+            --accent-purple: #7c3aed;
+            --accent-orange: #ff6b35;
+            --text-light: #ffffff;
+            --text-gray: #a0a0a0;
+            --surface-dark: #1a1a1b;
+            --surface-darker: #111112;
+            --gradient-primary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            --gradient-accent: linear-gradient(135deg, #7c3aed 0%, #ff6b35 100%);
+        }
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="http://imsiddharth.io">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Siddharth Thathagar | Software QA Consultant">
-<meta property="og:description" content="Hi, I am Siddharth, A Freelance Software QA and Testing Consultant. My aim is to provide an excellent service to clients and utilize my skills in software quality assurance and testing industry.">
-<meta property="og:image" content="https://www.imsiddharth.io/images/sidharath.png">
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Siddharth Thathagar | Software QA Consultant">
-<meta name="twitter:description" content="Hi, I am Siddharth, A Freelance Software QA and Testing Consultant. My aim is to provide an excellent service to clients and utilize my skills in software quality assurance and testing industry.">
-<meta name="twitter:image" content="">
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 11, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href='https://fonts.googleapis.com/css?family=Chelsea Market' rel='stylesheet'>
-  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/main-style.css">
-   <link rel="icon" href="images/logo.png" type="image/png" > 
-  
-<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-168465642-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-  gtag('config', 'UA-168465642-1');
-</script>  
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hamburger Icon */
+        .mobile-menu-toggle::before,
+        .mobile-menu-toggle::after,
+        .mobile-menu-toggle {
+            position: relative;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .mobile-menu-toggle span::before,
+        .mobile-menu-toggle span::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--text-light);
+            transition: all 0.3s ease;
+            left: 0;
+        }
+
+        .mobile-menu-toggle span::before {
+            top: -8px;
+        }
+
+        .mobile-menu-toggle span::after {
+            top: 8px;
+        }
+
+        /* Active hamburger animation */
+        .mobile-menu-toggle.active span {
+            background: transparent;
+        }
+
+        .mobile-menu-toggle.active span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .mobile-menu-toggle.active span::after {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height for mobile browsers */
+            background: var(--surface-darker);
+            backdrop-filter: blur(20px);
+            z-index: 1001;
+            transition: right 0.3s ease;
+            padding: 0;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--surface-dark);
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+            gap: 0;
+            padding: 1rem 0;
+        }
+
+        .mobile-nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .mobile-nav-links a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--accent-cyan);
+            padding-left: 2rem;
+        }
+
+        .mobile-nav-links a:hover::before {
+            transform: scaleY(1);
+        }
+
+        .mobile-nav-links a:last-child {
+            border-bottom: none;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--accent-cyan);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-dark);
+        }
+
+        .btn-cv {
+            background: var(--gradient-accent);
+            color: var(--text-light);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-cv:hover::before {
+            left: 100%;
+        }
+
+        .btn-cv:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-cv .cv-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-cv:hover .cv-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            top: 40%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--surface-darker);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--surface-dark);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 0;
+            background: var(--primary-dark);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--surface-dark);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;  /* Ensure full width */
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.1);
+        }
+
+        .skill-category-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category-icon {
+            font-size: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;  /* Ensure full width */
+            flex-wrap: wrap;  /* Allow wrapping if needed */
+            gap: 0.5rem;  /* Add gap for wrapped items */
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--text-light);
+            margin-right: 1rem;
+            flex: 1;
+            min-width: 120px;  /* Minimum width before wrapping */
+            max-width: calc(100% - 160px);  /* Maximum width to ensure space for progress bar */
+            white-space: normal;  /* Allow text wrapping */
+            word-wrap: break-word;  /* Break long words if needed */
+            line-height: 1.2;  /* Adjust line height for wrapped text */
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 140px;  /* Fixed width instead of min-width */
+            flex-shrink: 0;  /* Prevent shrinking */
+            justify-content: flex-end;  /* Align to the right */
+        }
+
+        .skill-bar {
+            width: 100px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            transition: width 1s ease;
+            will-change: width;  /* Optimize for animation */
+            transform: translateZ(0);  /* Force hardware acceleration */
+        }
+
+        .skill-percentage {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            width: 35px;  /* Fixed width instead of min-width */
+            text-align: right;
+            flex-shrink: 0;  /* Prevent shrinking */
+        }
+
+        /* Ensure last item doesn't have margin */
+        .skill-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        /* Improve mobile performance */
+        @media (max-width: 768px) {
+            .skill-progress {
+                transition: width 1.2s ease;  /* Slightly slower on mobile */
+            }
+            
+            .skill-bar {
+                width: 80px;  /* Smaller width on mobile */
+                height: 8px;  /* Slightly taller for better visibility */
+            }
+
+            .skill-level {
+                gap: 0.3rem;
+            }
+
+            .skill-percentage {
+                font-size: 0.75rem;
+                min-width: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-bar {
+                width: 70px;  /* Even smaller on very small screens */
+                height: 8px;
+            }
+
+            .skill-percentage {
+                font-size: 0.7rem;
+                min-width: 30px;
+            }
+        }
+
+        /* Certification badges */
+        .certifications {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .certification-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+
+        .certification-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .certification-badge {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent-purple);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 0;
+            background: var(--surface-darker);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            align-items: stretch;
+        }
+
+        .portfolio-item {
+            background: var(--surface-dark);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 102, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .portfolio-image {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image-inner {
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-icon {
+            font-size: 3.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .project-icon {
+            transform: scale(0.8);
+        }
+
+        .view-details-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .view-details-btn {
+            transform: translateY(0);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 0;
+            flex: 1;
+            line-height: 1.2;
+        }
+
+        .project-duration {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 1rem;
+            white-space: nowrap;
+        }
+
+        .portfolio-description {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 102, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 102, 255, 0.1);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.3rem;
+        }
+
+        .portfolio-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag.primary {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .tech-tag:hover {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        .tech-tag.primary:hover {
+            background: var(--gradient-accent);
+        }
+
+        /* Project Modal Styles */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--surface-dark);
+            border-radius: 25px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: scale(0.8) translateY(50px);
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            position: relative;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: 25px 25px 0 0;
+            text-align: center;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-project-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .modal-project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .modal-project-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-stat {
+            background: var(--surface-darker);
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .modal-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-tech-tag {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent-purple);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .modal-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-gray);
+        }
+
+        .modal-features li:last-child {
+            border-bottom: none;
+        }
+
+        .modal-features li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .modal-challenges {
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-challenges-title {
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-challenges-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-challenges-list li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .modal-challenges-list li::before {
+            content: '⚠️';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+        }
+
+        .modal-results {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+
+        .modal-results-title {
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .modal-result-item {
+            text-align: center;
+        }
+
+        .modal-result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .modal-result-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--surface-darker);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background: var(--surface-dark);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .form-message.success {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .form-message.error {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--accent-orange);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-loading {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--surface-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Modal Responsive Design */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                max-height: 95vh;
+                margin: 1rem;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-project-icon {
+                font-size: 3rem;
+            }
+
+            .modal-project-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-project-subtitle {
+                font-size: 1rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .modal-section-title {
+                font-size: 1.1rem;
+            }
+
+            .modal-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .modal-stat {
+                padding: 0.8rem;
+            }
+
+            .modal-stat-number {
+                font-size: 1.2rem;
+            }
+
+            .modal-tech-stack {
+                gap: 0.3rem;
+            }
+
+            .modal-tech-tag {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .modal-results-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .modal-result-value {
+                font-size: 1.4rem;
+            }
+
+            .modal-challenges,
+            .modal-results {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-tech-stack {
+                justify-content: center;
+            }
+
+            .portfolio-item::after {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .mobile-menu {
+                width: 90%;
+                max-width: none;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .mobile-menu-header {
+                padding: 0.8rem 1rem;
+            }
+
+            .mobile-nav-links a {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .mobile-menu-toggle {
+                width: 36px;
+                height: 36px;
+            }
+
+            .mobile-menu-toggle span,
+            .mobile-menu-toggle span::before,
+            .mobile-menu-toggle span::after {
+                width: 20px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .mobile-menu {
+                width: 95%;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu-toggle {
+                width: 32px;
+                height: 32px;
+            }
+
+            .mobile-menu-toggle span,
+            .mobile-menu-toggle span::before,
+            .mobile-menu-toggle span::after {
+                width: 18px;
+                height: 1.5px;
+            }
+
+            .mobile-menu-toggle span::before {
+                top: -6px;
+            }
+
+            .mobile-menu-toggle span::after {
+                top: 6px;
+            }
+        }
+
+        /* Main responsive styles for 768px and below */
+        @media (max-width: 768px) {
+            .hero-cta {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            /* Reduced padding for mobile */
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .services,
+            .skills,
+            .portfolio,
+            .contact {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .services-grid,
+            .skills-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .service-card,
+            .skill-category,
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .skill-bar {
+                width: 80px;
+            }
+
+            .skill-level {
+                gap: 0.3rem;
+            }
+
+            .certification-badges {
+                gap: 0.3rem;
+            }
+
+            .certification-badge {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.8rem;
+            }
+
+            /* Portfolio mobile optimizations */
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .project-duration {
+                margin-left: 0;
+                align-self: flex-start;
+            }
+
+            .portfolio-title {
+                font-size: 1.1rem;
+            }
+
+            .project-metrics {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+                padding: 0.8rem;
+            }
+
+            .metric-value {
+                font-size: 1.1rem;
+            }
+
+            .metric-label {
+                font-size: 0.65rem;
+            }
+
+            .portfolio-tech {
+                gap: 0.3rem;
+            }
+
+            .tech-tag {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            .view-details-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .services,
+            .skills,
+            .portfolio,
+            .contact {
+                padding: 2rem 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .service-card,
+            .skill-category,
+            .portfolio-item {
+                padding: 1rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
 </head>
-
-<body class="homepage loadpage">
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV3XH2K"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript> 
-<!-- End Google Tag Manager (noscript) -->
-
-  <div class="wrapper d-flex align-items-stretch" id="fades">
-    <div id="sidebar">
-      <nav>
-        <div class="p-2 p-md-4 pt-5"> <a href="index.html" title="Home" class="img logo rounded-circle mb-5"></a>
-          <ul class="list-unstyled components mb-5">
-            <li class="active"> <a href="index.html" aria-expanded="false" class="menu-home" data-toggle="tooltip"
-                data-placement="right" title="Home">
-                <svg xmlns="http://www.w3.org/2000/svg" width="44.031" height="45.688" viewBox="0 0 44.031 45.688">
-                  <path id="home" class="cls-1"
-                    d="M104.043,254.553c-0.112-2.089-.541-3.824-1.38-3.674-0.774.139-1.343,1.622-1.427,3.768-0.158,3.852-.336,7.741-0.317,11.6l0.047,4.664a2.047,2.047,0,0,1-.317,1.25,0.488,0.488,0,0,1-.122.121,0.067,0.067,0,0,0-.028.028H100.49c0.009,0,.028-0.01.037-0.01a0.055,0.055,0,0,1,.038.01c0.009,0.009.037,0.018,0,.018l-0.15.01h-0.028a0.407,0.407,0,1,1,.094-0.019H100.22l-0.588.009-4.663.1-1.166.028-0.289.009H93.43a0.748,0.748,0,0,1-.159-0.037,0.533,0.533,0,0,1-.252-0.242c-0.009-.028-0.028-0.056-0.037-0.084a0.253,0.253,0,0,1-.019-0.047l-0.009-.149h0v-0.084l-0.009-.289c0.27-2.789.429-5.587,0.522-8.4l0.056-2.108,0.009-.531v-0.308a3.4,3.4,0,0,0-.047-0.532,3.535,3.535,0,0,0-.951-1.884,3.619,3.619,0,0,0-1.865-1.026,3.859,3.859,0,0,0-.531-0.065H89.253l-2.117-.009-4.29.009a3.6,3.6,0,0,0-2.024.69,3.542,3.542,0,0,0-1.278,1.707,4.853,4.853,0,0,0-.149.522c-0.019.112-.037,0.224-0.047,0.336l-0.009.084v0.1l-0.009.223V261.8c0.009,2.826.009,5.653-.047,8.469a2.965,2.965,0,0,0,.541,1.539c0.457,0.494.839-.149,1.128-1.1a31.009,31.009,0,0,0,1.063-5.149c0.121-.914.214-1.856,0.28-2.817,0.037-.475.065-0.96,0.093-1.436l0.028-.728,0.009-.177v-0.037h0v-0.075l0.009-.093c0-.019.009,0,0.009,0s0,0.009.009-.009a0.444,0.444,0,0,1,.326-0.289c-0.065-.028.774,0.018,1.306,0.028l3.507,0.112,1.753,0.056,0.438,0.009h0.14l0.1,0.009c-0.009,0-.028.01-0.038,0.01-0.037-.01-0.009.009-0.009,0.009a0.019,0.019,0,0,0,.019.009l0.028,0.028a0.126,0.126,0,0,1,.028.075v0.028a0.362,0.362,0,0,0-.009.168l-0.037,1.753c-0.047,2.341-.084,4.692-0.084,7.042L89.933,271l0.009,0.876v0.2l0.009,0.112v0.056l0.009,0.121c0.009,0.094.028,0.178,0.037,0.271a3.4,3.4,0,0,0,.28.839,3.468,3.468,0,0,0,2.714,1.95c0.14,0.018.289,0.018,0.429,0.028h0.233l0.438-.01,0.886-.028c1.166,0.038,2.332.066,3.5,0.1l1.39,0.028,0.345,0.009h0.2l0.149-.009h0.131a3.025,3.025,0,0,0,.382-0.056c0.084-.019.168-0.037,0.243-0.056l0.186-.056a4.061,4.061,0,0,0,.672-0.317,4.24,4.24,0,0,0,1.585-1.837,5.277,5.277,0,0,0,.485-2.024l0.009-.252v-0.523l0.01-.69,0.009-1.38v-2.77C104.314,261.912,104.23,258.228,104.043,254.553Zm3.553-2.145c0.616-.056.467-0.709,0.056-1.474a31.35,31.35,0,0,0-5.9-7.293q-3.5-3.359-7-6.725c-1.175-1.119-2.35-2.229-3.544-3.32l-1.809-1.633-0.9-.811-0.457-.4-0.224-.205L87.63,230.4l-0.121-.094-0.019-.018a1.752,1.752,0,0,0-2.276.065c-1.129,1.026-2.248,2.071-3.339,3.124-0.765.635-1.529,1.278-2.285,1.912-4.812,4.095-9.54,8.255-13.951,12.722-1.259,1.269-2.08,2.575-1.408,3.125,0.606,0.494,1.93.075,3.348-1.082,0.541-.438,1.091-0.877,1.632-1.324-0.149,1.9-.28,3.824-0.261,5.726,0.037,3.451.224,6.9,0.345,10.353a41.463,41.463,0,0,0-.522,4.664l-0.056,1.175-0.019.587-0.009.29v0.149l0.009,0.261a3.667,3.667,0,0,0,.774,2.1,3.745,3.745,0,0,0,1.837,1.3c0.093,0.028.186,0.056,0.28,0.075l0.14,0.037,0.177,0.028,0.177,0.019,0.14,0.009,0.149,0.009h0.69l1.175-.009,2.36-.019h3.021a3.63,3.63,0,0,0,2.994-1.744,1.629,1.629,0,0,0,.205-0.961c-0.009-.084-0.019-0.158-0.028-0.242a1.7,1.7,0,0,0-.056-0.252,0.3,0.3,0,0,0-.159-0.242,0.549,0.549,0,0,0-.625-0.028,1.111,1.111,0,0,0-.308.3c-0.112.112-.224,0.224-0.345,0.336a1.9,1.9,0,0,1-1.3.485,1.529,1.529,0,0,1-.55-0.14q-0.378-.112-0.755-0.2a17.71,17.71,0,0,0-3.171-.429l-1.949-.1-0.97-.056H72.55l-0.121-.009c-0.056,0-.037-0.009-0.037-0.009H72.41a0.393,0.393,0,0,1-.1-0.065,0.419,0.419,0,0,1-.159-0.374c0-.018.009-0.027,0.009-0.046l0.009-.233,0.019-.485,0.037-.98c0.1-2.6.121-5.2-.028-7.825l0.1-1.94a93.077,93.077,0,0,0-.177-12.284,3.782,3.782,0,0,0-.336-1.315c1.156-.97,2.3-1.949,3.423-2.956,3.758-3.405,7.433-6.921,11.126-10.391l0.466,0.5,1.222,1.268c0.821,0.84,1.66,1.67,2.509,2.491,1.7,1.632,3.441,3.227,5.2,4.812,3.525,3.162,7.125,6.249,10.566,9.476A1.929,1.929,0,0,0,107.6,252.408Z"
-                    transform="translate(-64 -229.906)" />
-                </svg>
-
-                <br>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="6.969" viewBox="0 0 85 6.969">
-                  <defs>
-                    <style>
-                      .cls-active {
-                        fill: #e6913d;
-                        fill-rule: evenodd;
-                      }
-                    </style>
-                  </defs>
-                  <path id="underline" class="cls-active "
-                    d="M128.089,290.093c-6.918-.316-13.952.758-20.867,1.152-6.96.4-13.925,0.653-20.891,0.81-13.943.314-27.847-.348-41.783-0.509-0.748-.009-0.723,1.37,0,1.453,2.874,0.329,5.757.58,8.644,0.794q-3.084-.09-6.169-0.186c-0.995-.032-0.981,1.877,0,1.95,12.358,0.917,24.736,1.317,37.114,1.416q9.129,0.073,18.258-.087c5.873-.1,12.1.319,17.892-0.952,1.122-.246.728-2.229-0.25-2.349-0.073-.008-0.147-0.011-0.219-0.019a61.754,61.754,0,0,0,8.514-1.2C129.382,292.136,129.078,290.138,128.089,290.093Z"
-                    transform="translate(-44 -290.031)" />
-                </svg>
-              </a> </li>
-            <li> <a href="about-me.html" class="menu-user" data-toggle="tooltip" data-placement="right"
-                title="About me">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35.75" height="46" viewBox="0 0 35.75 46">
-
-                  <path id="user-1" class="cls-1"
-                    d="M67.1,388.838c3.294,5.621,12.912,6.795,18.628,6.657,5.19-.125,13.637-1.843,16.21-6.978,1.412-2.817-.781-7.233-1.879-9.889a27.242,27.242,0,0,0-5.955-8.915,14.77,14.77,0,0,0,2.858-9.445,11.1,11.1,0,0,0-11.5-10.773c-7.076-.059-12.974,4.475-13.492,11.693a10.909,10.909,0,0,0,3.024,8.671,29.8,29.8,0,0,0-6.058,9.422C68.03,381.562,65.631,386.336,67.1,388.838Zm18.363-34.889c7.867,0,9.474,10.651,3.355,14.56-5.153,3.292-11.745-.714-12.367-6.273C75.857,356.935,80.747,353.91,85.462,353.949Zm-14.025,32.23a30.087,30.087,0,0,1,1.242-4.318A25.349,25.349,0,0,1,78.7,372.44a15.888,15.888,0,0,0,9.274,1.129,9.247,9.247,0,0,0,2.721-.94,26.919,26.919,0,0,1,7.1,13.677c0.642,2.9-9.761,4.59-12.073,4.733a21.88,21.88,0,0,1-13.384-3.326C70.752,386.669,71.146,387.784,71.436,386.179Z"
-                    transform="translate(-66.625 -349.5)" />
-                </svg>
-              </a> </li>
-            <li> <a href="portfolio.html" class="menu-bookmark" data-toggle="tooltip" data-placement="right"
-                title="Portfolio">
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="45.5" viewBox="0 0 46 45.5">
-
-                  <path id="bookmark" class="cls-1"
-                    d="M65.776,520.121c6.672,0.327,13.338.047,20.006-.237,5.7-.241,11.855.421,17.484-0.344,8.553-1.16,5.112-14.38,4.694-20.156-0.259-3.569.5-7.081,0.006-10.661-0.449-3.238-4.066-3.651-6.675-3.8-1.228-.069-2.461-0.057-3.7-0.009-0.812-2.855-1.642-5.713-3.757-7.906-2.511-2.605-6.849-2.323-10.128-2.209-7.31.258-11.082,4.289-11.883,10.846-2.21.03-4.419,0.053-6.63,0.057a2.033,2.033,0,0,0-1.457.565,2,2,0,0,0-.73,1.622c0.029,10.017.555,20.024,0.583,30.04A2.219,2.219,0,0,0,65.776,520.121Zm38.3-5.964c-0.39,1.986-4.4,1.046-5.932,1.006-10.075-.267-20.124.913-30.206,0.645-0.045-4.769-.169-9.536-0.3-14.3a56.462,56.462,0,0,0,13.242,4.133,2.169,2.169,0,0,0,1.932,3.1h6.123a2.167,2.167,0,0,0,1.95-3.066,38.7,38.7,0,0,0,12.808-4.8c0.206,2.781.532,5.552,0.648,8.341A21.25,21.25,0,0,1,104.073,514.157ZM83.706,479.178c2.517-.171,6.079-0.538,7.748,1.737a12.541,12.541,0,0,1,1.736,4.27c-1.683.121-3.366,0.232-5.035,0.242-3.98.022-7.959,0.092-11.939,0.157C76.818,481.553,78.934,479.5,83.706,479.178Zm10.55,10.434c1.222-.1,9.084-1.242,9.492.275a16.107,16.107,0,0,1,.043,5.791A36.029,36.029,0,0,1,90.8,501.12a2.009,2.009,0,0,0-2.035-1.6,56.3,56.3,0,0,0-5.8.109,2.3,2.3,0,0,0-2.124,1.675c-4.643-.739-9.1-2.67-13.337-4.606q-0.077-3.307-.1-6.615C76.326,490.107,85.4,490.319,94.256,489.612Z"
-                    transform="translate(-63 -474.75)" />
-                </svg>
-
-              </a> </li>
-            <li> <a href="skills.html" class="menu-sticker" data-toggle="tooltip" data-placement="right" title="Skills">
-                <svg xmlns="http://www.w3.org/2000/svg" width="34.438" height="46" viewBox="0 0 34.438 46">
-
-                  <path id="sticker" class="cls-1"
-                    d="M99,606.319c-2.2-4.351-6.842-7-11.42-8.078-8.637-2.041-20.367,2.24-21.237,12.24-0.517,5.944,2.728,11.413,6.5,15.744,0.059,0.068.11,0.122,0.157,0.172,0.356,1.248.8,2.468,1.267,3.676a12.275,12.275,0,0,0,2.893,4.727c0.017,0.026.032,0.054,0.051,0.078,0.433,1.813.78,3.308,2.4,4.56,0.014,0.01.029,0.018,0.043,0.028,0.167,2.2,1.84,4.517,4.234,4.271a3.9,3.9,0,0,0,3.4-2.8,3.726,3.726,0,0,0,.161-0.689,2.265,2.265,0,0,0,2.041-1.623,15.2,15.2,0,0,0,.67-4.416c0-.046-0.01-0.085-0.011-0.129,3.261-3.2,4.428-8.251,7.127-11.966C100.97,617.036,101.915,612.085,99,606.319Zm-4.981,12.757c-1.1,1.614-2.289,3.131-3.247,4.842-1.2,2.144-1.6,4.561-3.176,6.525-1.834,2.281-4.869,2.316-7.344,1.206-2.328-1.579-2.052-5.285-3.347-7.5-1.8-3.069-4.292-5.26-5.578-8.773-3.228-8.815,5.714-13.513,13.134-13.128a14.085,14.085,0,0,1,9.021,4C97.393,610.074,96.844,614.937,94.015,619.076ZM77.85,605.941a8.171,8.171,0,0,0-5.1,6.145,2.221,2.221,0,1,0,4.282,1.182,5.619,5.619,0,0,1,.8-2.064,2.754,2.754,0,0,1,1.2-.977,2.269,2.269,0,0,0,1.551-2.734A2.226,2.226,0,0,0,77.85,605.941Z"
-                    transform="translate(-66.281 -597.75)" />
-                </svg>
-
-
-              </a> </li>
-            <li> <a href="contact.html" class="menu-speech" data-toggle="tooltip" data-placement="right"
-                title="Contact Me">
-                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="39.375" viewBox="0 0 46 39.375">
-
-                  <path id="contact" class="cls-1"
-                    d="M103,725.8c-1.441-1.466-3.248-1.492-5.213-1.536-3.145-.068-6.333-0.172-9.471.013-9.117.533-18.084-.446-27.177-0.131a2.1,2.1,0,0,0-1.083.331,1.917,1.917,0,0,0-1.045,1.8c0.03,8.208.828,16.488,0.483,24.688-0.161,3.818-2.044,9.66,2.7,11.426,4.946,1.843,11.1.868,16.219,0.481a142.092,142.092,0,0,1,23.524.494,2.117,2.117,0,0,0,2.052-1.563c1.9-7.13.636-14.516,0.377-21.767C104.218,735.994,106.218,729.076,103,725.8Zm-2.736,33.157a122.673,122.673,0,0,0-18.563-.592,130.007,130.007,0,0,1-14.763.616c-2.573-.124-3.713-0.157-3.648-2.831,0.055-2.315.487-4.589,0.478-6.909-0.026-6.958-.38-13.909-0.468-20.866,6.2,0,12.379.792,18.585,0.653,5.626-.125,11.157-0.609,16.8-0.484,3.079,0.067,1.4,9.167,1.43,11.493C100.191,746.338,101.437,752.723,100.261,758.959ZM79.093,745.736c0.975-1.949-.9-4.964-2.474-6.658a5.347,5.347,0,0,0,.888-3.172,4.073,4.073,0,0,0-4.2-3.958,4.605,4.605,0,0,0-4.873,4.269,3.965,3.965,0,0,0,.918,2.938c-1.418,1.61-3.173,4.356-2.631,6.326,0.57,2.071,4.405,2.6,6.1,2.67C74.71,748.23,78.139,747.646,79.093,745.736Zm-5.785-11.659c2.341,0,2.793,3.189.978,4.35a2.5,2.5,0,0,1-3.715-1.855C70.39,734.947,71.869,734.065,73.308,734.077ZM68.87,744.8c0.008-.054.017-0.116,0.027-0.185a10.279,10.279,0,0,1,.371-1.265,8.107,8.107,0,0,1,1.846-2.953,5.774,5.774,0,0,0,3.129.315,3.355,3.355,0,0,0,.77-0.232,9.023,9.023,0,0,1,2.136,4.163c0.2,0.821-3.134,1.332-3.785,1.376A6.675,6.675,0,0,1,68.87,744.8Zm25.748-8.3c-1.233.407-2.13,0.9-3.365,0.182a7.641,7.641,0,0,0-2.259-1.028c-1.525-.348-3.085.484-4.419,1.1-1.244.577-.162,2.411,1.075,1.838a7.7,7.7,0,0,1,2.606-.883c1.056-.082,1.844.916,2.759,1.256,1.509,0.56,2.706.067,4.169-.414C96.482,738.127,95.925,736.07,94.618,736.5Zm0,6.6c-1.233.406-2.13,0.9-3.365,0.182a7.641,7.641,0,0,0-2.259-1.028c-1.525-.348-3.085.484-4.419,1.1-1.244.577-.162,2.411,1.075,1.838a7.7,7.7,0,0,1,2.606-.883c1.056-.082,1.844.915,2.759,1.256,1.509,0.56,2.706.066,4.169-.415C96.482,744.726,95.925,742.669,94.618,743.1Zm-3.593,8.552c-2.585.851-4.516,1.775-7.124,0.249a13.619,13.619,0,0,0-4.062-1.858c-2.606-.593-5.383.947-7.653,2-1.245.576-.163,2.41,1.074,1.837a15.858,15.858,0,0,1,5.43-1.806c2.2-.17,3.622,1.723,5.5,2.418,2.706,1.006,4.77.08,7.407-.788C92.889,753.277,92.334,751.221,91.026,751.652Z"
-                    transform="translate(-59 -724.094)" />
-                </svg>
-
-              </a> </li>
-          </ul>
-          <div class="footer"> <a target="_blank" href="https://www.linkedin.com/in/siddharthqaexpert/"
-              class="fa fa-linkedin">
-              <svg xmlns="http://www.w3.org/2000/svg" width="42" height="43" viewBox="0 0 42 43">
-
-                <path id="linkin" class="cls-1"
-                  d="M35.4,988.588a6.7,6.7,0,0,0,1.3.081,3.873,3.873,0,0,0,.8-0.052c0.061,0,.115.014,0.177,0.014a4.5,4.5,0,0,0,3.351-1.245,4.2,4.2,0,0,0,1.224-3.066,4.774,4.774,0,0,0-1.163-3.066A3.715,3.715,0,0,0,38.4,980.06c-0.081-.017-0.163-0.033-0.239-0.044a1.916,1.916,0,0,0-1.085.09,4.779,4.779,0,0,0-2.617,1.136,3.96,3.96,0,0,0-1.338,3.078,4.239,4.239,0,0,0,1.214,3.066,4.031,4.031,0,0,0,2.1,1.106c-0.185.024-.365,0.044-0.528,0.05a1.54,1.54,0,0,0-.721-0.149c-0.036.01,0.078,0.045,0.109,0.067a4.471,4.471,0,0,1-1-.334,4.093,4.093,0,0,1-2.168-3.034,4.154,4.154,0,0,1,1.071-3.62,5.04,5.04,0,0,1,3.417-1.393l0.07,0c0.977-.028-0.269-0.1-0.762-0.008a6.426,6.426,0,0,0-.657.142l-0.137.045a4.445,4.445,0,0,0-2.525,1.854,4.532,4.532,0,0,0-.264,4.011A4.119,4.119,0,0,0,35.4,988.588Zm38.225,30.082a1.581,1.581,0,0,1-.83.42c-0.653.07-1.564-.01-2.757-0.01a41.036,41.036,0,0,0-8.7.77c-0.391-.25.258-0.54-1.015-0.76-4.958-.11-10.4,1.17-15.676,1.26-1.072-.91-4.928-1.37-6.56-0.92-0.17.45,2.514,0.48,2.41,0.8-0.986.39-2.637,0.07-4.158-.35l-2.011-.59c-0.015,0-.031-0.01-0.046-0.01a2.469,2.469,0,0,1-.974-0.63s0-.01,0-0.02c0.021,0.01.026-.02,0.076-0.06a1.779,1.779,0,0,1,.471-0.28,7.126,7.126,0,0,1,1.283-.42,43.269,43.269,0,0,1,5.679-.85c1.936-.19,3.894-0.32,5.86-0.42l1.637-.06a4.592,4.592,0,0,0,3.452.46H52.28a3.612,3.612,0,0,0,.468-0.05,4.383,4.383,0,0,1-1.129.42,20.964,20.964,0,0,1-2.177.16,4.178,4.178,0,0,0,2.814.09,5.252,5.252,0,0,0,2.107-1.22c1.381,0,2.761.01,4.136,0.04,2.326,0.08,4.651.19,6.933,0.43a5.985,5.985,0,0,0,1.116.56,4.789,4.789,0,0,0,3.1.07c0.132,0.02.267,0.04,0.4,0.07a13.7,13.7,0,0,1,2.652.68c0.336,0.15.381,0.46,0.429,0.36a0.481,0.481,0,0,0-.137-0.44,1.816,1.816,0,0,0-.569-0.42c-0.057-.03-0.113-0.06-0.181-0.09a0.271,0.271,0,0,0-.077-0.04,0.511,0.511,0,0,0-.115-0.04c-0.081-.04-0.147-0.07-0.24-0.11-0.166-.06-0.334-0.1-0.5-0.15a0.937,0.937,0,0,0-.158-0.05c-0.2-.06-0.4-0.11-0.6-0.16,0.1-.06.2-0.11,0.288-0.17a3.764,3.764,0,0,0,3.1-3.73v-10.53a14.523,14.523,0,0,0-.761-4.97,9.945,9.945,0,0,0-2.109-3.5,8.148,8.148,0,0,0-3.2-2.079,10.637,10.637,0,0,0-1.1-.322,12.313,12.313,0,0,0-4.3-.665,10.059,10.059,0,0,0-3.83.777,7.259,7.259,0,0,0-1.732.994c-0.325.256-.626,0.529-0.918,0.809-0.086-.853-1.438-1.543-3.191-1.66a3.414,3.414,0,0,0-1.267-.42c-1.764-.035-3.629-0.158-5.314.975a1.325,1.325,0,0,0-.322.352,0.729,0.729,0,0,0-.107.374l0,0.17,0.013,0.655,0.019,1.312,0.016,2.618,0.035,5.215c0.041,3.01.059,5.95,0.128,8.91,0,0.09-.01.16-0.012,0.25a4.614,4.614,0,0,0,.146,1.73,3.877,3.877,0,0,0,1.066,1.59c0.092,0.08.2,0.14,0.3,0.22-2.32.09-4.625,0.22-6.9,0.42a3.8,3.8,0,0,0,1.788-3.22V995.83a3.761,3.761,0,0,0-3.727-3.794H37.805c-0.062,0-.12,0-0.175,0H37.387a3.762,3.762,0,0,0-3.726,3.794v17.38a3.787,3.787,0,0,0,2.035,3.36c-0.262-.09-0.6-0.21-0.934-0.34a0.472,0.472,0,0,0,.194.2,4.567,4.567,0,0,1-1.736-1.41,3.176,3.176,0,0,1-.622-1.91l-0.009-2.06,0-4.15,0.051-8.343,0.014-2.073a9.977,9.977,0,0,1,.031-1.023,3.092,3.092,0,0,1,.3-0.959,4.357,4.357,0,0,1,1.648-1.709c0.038-.022.082-0.053,0.118-0.071l0.059-.029a4.883,4.883,0,0,1,.49-0.235c0.043-.017.086-0.035,0.13-0.051s0.079-.028.119-0.042c0.157-.055.315-0.107,0.475-0.146l0.093-.023c0.533-.112.792-0.1,0.847-0.123a0.563,0.563,0,0,0-.368-0.038,4.373,4.373,0,0,0-1.749.456c-0.019.008-.034,0.017-0.051,0.025-0.049.026-.111,0.051-0.153,0.078s-0.092.061-.139,0.09c-0.028.018-.067,0.035-0.092,0.053s-0.054.041-.082,0.06c-0.077.053-.152,0.106-0.226,0.162L34,993.043c-0.039.031-.077,0.063-0.114,0.1-0.095.082-.185,0.168-0.273,0.257-0.033.034-.071,0.064-0.1,0.1-0.017.018-.025,0.031-0.041,0.049-0.051.056-.1,0.115-0.145,0.174s-0.087.109-.122,0.158-0.079.1-.115,0.151a3.357,3.357,0,0,0-.581,2.072l-0.026,4.312-0.05,8.69c0,1.46-.016,2.89.009,4.34a4.121,4.121,0,0,0,2.491,3.21,2.759,2.759,0,0,0-1.032.27c-0.421.22-.609,0.5-0.446,0.6a2.206,2.206,0,0,0-.717.19,1.231,1.231,0,0,0-.429.33,1.171,1.171,0,0,0-.193.34,1.158,1.158,0,0,0-.058.22l0,0.03h0l0,0.08h0v0.01l-0.013.02-0.012.04a1.533,1.533,0,0,0,.041.31,2.076,2.076,0,0,0,.064.21,2.154,2.154,0,0,0,.168.34,3.119,3.119,0,0,0,.356.47,5.3,5.3,0,0,0,.69.64,8.368,8.368,0,0,0,2.745,1.45c0.305-.05-0.436-0.44.053-0.42,1.95,1.48,5.451,1.44,5.625.8a18.446,18.446,0,0,1-3.975-.92,21.457,21.457,0,0,1-3.146-1.35c0.078,0.03.154,0.07,0.233,0.11a17.631,17.631,0,0,0,2.45.79,32.258,32.258,0,0,0,5.1.81,73.29,73.29,0,0,0,10.477-.03c3.5-.21,6.979-0.53,10.394-0.78l5.087-.35c0.846-.05,1.689-0.11,2.55-0.21a11.028,11.028,0,0,0,1.329-.21,4.085,4.085,0,0,0,.735-0.22,2.073,2.073,0,0,0,.927-0.67,1.063,1.063,0,0,0-.024-0.78A0.189,0.189,0,0,0,73.623,1018.67Zm-9.429-19.116a7.329,7.329,0,0,1,1.025,4.1v9.56a3.794,3.794,0,0,0,1.735,3.19,4.341,4.341,0,0,1-.879-0.43,3.953,3.953,0,0,1-1.448-1.53,2.849,2.849,0,0,1-.3-1.01c-0.027-.36-0.017-0.75-0.027-1.13l-0.021-4.57,0.026-4.62a6.283,6.283,0,0,0-1.586-4.388,3.573,3.573,0,0,0-1.022-.633A3.441,3.441,0,0,1,64.194,999.554Zm-8.211-3.933c0.012-.024.023-0.654,0.025-1.469a9.189,9.189,0,0,1,7.26-2.678c0.073,0,.146.013,0.219,0.017a10.119,10.119,0,0,0-2.619.376,8.914,8.914,0,0,0-2.245,1.01,8.008,8.008,0,0,0-1.569,1.329c-0.2.224-.384,0.445-0.551,0.66a5.62,5.62,0,0,0-.5.765C55.989,995.664,55.97,995.65,55.983,995.621Zm0.026,17.589v-10.16q0-.57.048-1.08a3.987,3.987,0,0,1,.142-0.7,7.059,7.059,0,0,1,.713-0.97,3.983,3.983,0,0,1,.581-0.527l0.209-.147a1,1,0,0,1,.142-0.073c0.068-.041.2-0.087,0.307-0.133a4.654,4.654,0,0,1,3.04.121,1.91,1.91,0,0,1,.862.759c0.072,0.14.192,0.32,0.224,0.41,0.038,0.11.084,0.17,0.126,0.31a5.58,5.58,0,0,1,.227.76,8.185,8.185,0,0,1,.194,1.68l0.043,1.94c0.176,2.01.329,0.94,0.5,1.54-0.072,1.22-.117,2.47-0.138,3.71l-0.014,1.87,0,0.46,0,0.27,0.015,0.25a3.854,3.854,0,0,0,.295,1.19,4.824,4.824,0,0,0,1.111,1.56q-1.785-.15-3.586-0.24c-2.046-.1-4.1-0.13-6.16-0.14A3.748,3.748,0,0,0,56.008,1013.21Zm-9.467-8.63a2.315,2.315,0,0,0-.215.62l-0.085-5.07L46.2,995.708l-0.044-2.223a0.573,0.573,0,0,1,.036-0.3,0.769,0.769,0,0,1,.186-0.23,2.333,2.333,0,0,1,.469-0.313,5.309,5.309,0,0,1,1.035-.4,7.842,7.842,0,0,1,2.192-.275,10.994,10.994,0,0,1,1.716.067h-0.83c-2.059,0-3.724.387-3.715,0.868,0,0.249.01,0.538,0.014,0.872,0.019,0.867.033,1.916,0.033,3.143v8.472c0,2.43-.01,5.04-0.029,7.81a3.84,3.84,0,0,0,.038.42c-0.018-.05-0.04-0.09-0.054-0.13a1.461,1.461,0,0,1-.047-0.14l-0.02-.14,0-.03c0,0.05,0-.01,0,0l-0.008-.07-0.129-1.08c-0.182-1.42-.4-2.8-0.576-3.99C46.655,1008.32,46.833,1006.46,46.542,1004.58Zm-0.013,8.91a3.439,3.439,0,0,0,1.5,2.02,3.56,3.56,0,0,0,.227.29,0.013,0.013,0,0,0-.014-0.01A3.524,3.524,0,0,1,46.529,1013.49Zm-13.247,5.16c-0.031.04-.032-0.02-0.044-0.04a0.124,0.124,0,0,0,.052.03S33.288,1018.64,33.282,1018.65Zm2.912-1.87,0.1,0.03a0.4,0.4,0,0,1-.109,0C36.2,1016.81,36.2,1016.79,36.193,1016.78Zm-0.276.22a2.158,2.158,0,0,1-.249.04c-0.126.03-.252,0.06-0.379,0.08-0.055-.06.071-0.15,0.184-0.24A3.459,3.459,0,0,0,35.917,1017Z"
-                  transform="translate(-32 -980)" />
-              </svg>
-            </a>
-            <a href="skype:siddharth.qa.engineer?chat" class="fa fa-facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="39.938" height="35.938" viewBox="0 0 39.938 35.938">
-
-                <path id="skype" class="cls-1"
-                  d="M109.306,1015.65a18.128,18.128,0,0,0,4.9.86,18.448,18.448,0,0,0,2.906.24c0.294,0,.591-0.02.887-0.03,0.648,0.18,1.3.37,1.957,0.54a12.347,12.347,0,0,0,2.9.46,11.288,11.288,0,0,0,2.567.29,11.928,11.928,0,0,0,2.089-.18,13.473,13.473,0,0,0,3.808-1.5,10.224,10.224,0,0,0,3.865-4.41,9.318,9.318,0,0,0,.4-6.62,8.779,8.779,0,0,0-.517-1.28,5.368,5.368,0,0,1-.537-2.45c0.04-.44.06-0.86,0.06-1.28a14.363,14.363,0,0,0-1.362-6.19,16.288,16.288,0,0,0-3.754-5.07,17.118,17.118,0,0,0-1.581-1.263c-0.085-.248.473,0.028-0.772-1.168a16.551,16.551,0,0,0-5.982-3.058,23.456,23.456,0,0,0-6.753-.644l-0.071,0h0l-1.01.134-0.263.037-0.031,0-0.011,0h0a2.957,2.957,0,0,1-.387-0.066,18.756,18.756,0,0,1-1.854-.537l-0.083-.028h0a20.755,20.755,0,0,0-2.991-.4,11.969,11.969,0,0,0-3.014.258,8.063,8.063,0,0,0-4.575,1.43,9.568,9.568,0,0,0-1.216.942,8.439,8.439,0,0,0-1.019,1.106,6.955,6.955,0,0,0-1.141,2.114,9.66,9.66,0,0,0,1.139-1.511,4.112,4.112,0,0,1,1.372-1.308,25.638,25.638,0,0,0-1.609,2.189,10.457,10.457,0,0,0-1.336,3.1,8.223,8.223,0,0,0-.155,3c0,0.035.008,0.068,0.013,0.1s0.007,0.078.014,0.115,0.015,0.054.021,0.085a8.142,8.142,0,0,0,.428,1.739c0.228,0.643.509,1.267,0.77,1.88,0.063,0.151.127,0.307,0.171,0.448l0.027,0.1a0.118,0.118,0,0,1,.007.054c0,0.015-.021.152-0.029,0.221l-0.13,1.01v0.031a19.773,19.773,0,0,0,.677,5.318,15.249,15.249,0,0,0,2.4,4.88A17.83,17.83,0,0,0,109.306,1015.65Zm10.654,1.31c-0.348-.1-0.693-0.19-1.039-0.29l0.262-.03a10.037,10.037,0,0,1,1.9.58A10.962,10.962,0,0,1,119.96,1016.96Zm-5.56-32.783h0a26.289,26.289,0,0,1,3.82.225c-0.368-.02-0.735-0.048-1.111-0.048-0.455,0-.917.018-1.384,0.044-0.228.018-.459,0.039-0.69,0.062a3.481,3.481,0,0,1-1.13-.231Zm-5.221,8.518a6.886,6.886,0,0,1,3.14-1.975,14.309,14.309,0,0,1,4.742-.683,16.392,16.392,0,0,1,2.031.113,12.938,12.938,0,0,1,1.75.343,9.5,9.5,0,0,1,2.644,1.212,6.618,6.618,0,0,1,1.554,1.6,3.222,3.222,0,0,1,.474,1.653,1.666,1.666,0,0,1-.614,1.3,2.167,2.167,0,0,1-1.564.617,2.214,2.214,0,0,1-1.3-.388,4.1,4.1,0,0,1-.967-1.125,5.082,5.082,0,0,0-1.516-1.74,4.952,4.952,0,0,0-2.836-.6,5.9,5.9,0,0,0-2.957.639,1.983,1.983,0,0,0-1.068,1.608,1.425,1.425,0,0,0,.33.983,3.278,3.278,0,0,0,1.067.706c0.219,0.094.438,0.18,0.646,0.253a6.815,6.815,0,0,0,.7.208c0.225,0.06.523,0.128,0.9,0.207l1.4,0.317q1.917,0.426,3.622.847a11.738,11.738,0,0,1,2.767,1.228,5.239,5.239,0,0,1,1.8,1.76,5.138,5.138,0,0,1,.615,2.61,5.517,5.517,0,0,1-1.11,3.44,7.864,7.864,0,0,1-3.237,2.38,14.206,14.206,0,0,1-5.067.85,12.8,12.8,0,0,1-5.81-1.22,6.952,6.952,0,0,1-2.591-2.22,4.648,4.648,0,0,1-1.02-2.76,1.822,1.822,0,0,1,.614-1.4,2.431,2.431,0,0,1,1.6-.53,1.994,1.994,0,0,1,1.308.44,2.917,2.917,0,0,1,.924,1.32,7.237,7.237,0,0,0,.977,1.68,3.5,3.5,0,0,0,1.446,1.12,5.928,5.928,0,0,0,2.494.39,5.73,5.73,0,0,0,3.4-.83,2.55,2.55,0,0,0,1.335-2.22,2.132,2.132,0,0,0-.183-0.89,3.733,3.733,0,0,0-1.386-1.35,4.555,4.555,0,0,0-.973-0.39,11.946,11.946,0,0,0-1.34-.32c-0.5-.1-1.073-0.23-1.725-0.39a23.877,23.877,0,0,1-4.272-1.16,6.276,6.276,0,0,1-2.776-1.835,4.153,4.153,0,0,1-1.021-2.908A4.247,4.247,0,0,1,109.179,992.7Zm-11.357,7.149a1.564,1.564,0,0,0,.225.536c0.038-.422.069-0.841,0.085-1.228l0,0.043c0.047-.286.081-0.56,0.1-0.8l0.026-.34,0.008-.122-0.007-.079a0.909,0.909,0,0,0-.058-0.235c-0.164-.379-0.3-0.484-0.326-0.377a17.132,17.132,0,0,1-.712-3.438,10.516,10.516,0,0,1,.45-3.416c0.026-.352-0.334.549-0.24-0.024,0.143-.3.313-0.618,0.486-0.936l0.267-.462c0.11-.174.225-0.385,0.32-0.515a12.559,12.559,0,0,1,1.342-1.716c0.247-.265.439-0.453,0.7-0.7l0.576-.528a1.781,1.781,0,0,0,.564-0.631,10.722,10.722,0,0,0-2.988,2.459,9.292,9.292,0,0,0-1.839,3.563,8.786,8.786,0,0,0-.256,1.891c0-.2.006-0.4,0.015-0.6a9.41,9.41,0,0,1,3.247-6.447,10.659,10.659,0,0,1,2.3-1.516,12.5,12.5,0,0,1,1.3-.54,11.167,11.167,0,0,1,1.332-.36,10.668,10.668,0,0,1,2.786-.2c0.1,0.008.211,0.028,0.316,0.039a11.043,11.043,0,0,0-6.53,2.786,9.559,9.559,0,0,0-2.269,3.1,8.91,8.91,0,0,0-.828,3.792,8.143,8.143,0,0,0,.438,2.654c0.483,1.413,1.214,2.645,1.169,2.971q-0.042.3-.074,0.591a10.314,10.314,0,0,0-.07,1.25,15.334,15.334,0,0,0,1.361,6.41,16.34,16.34,0,0,0,3.74,5.24,18.084,18.084,0,0,0,5.547,3.52c0.447,0.18.9,0.33,1.363,0.47a17.839,17.839,0,0,1-2.392-.61,17.362,17.362,0,0,1-8.59-6.25,14.945,14.945,0,0,1-2.283-4.76A19.13,19.13,0,0,1,97.822,999.844Z"
-                  transform="translate(-96.063 -982.062)" />
-              </svg>
-
-            </a> </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ST</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+            </button>
         </div>
-      </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <div class="logo">ST</div>
+                <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu Overlay -->
+        <div class="menu-overlay"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I'm Siddharth</h1>
+                <p class="hero-subtitle">Elite QA Consultant & Testing Strategist</p>
+                <p class="hero-description">
+                    Transforming software quality through innovative testing methodologies, automation excellence, and strategic quality assurance. I help organizations deliver flawless digital experiences that users love.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                    <a href="#portfolio" class="btn btn-secondary">View My Work</a>
+                    <a href="siddharth_thathagar_cv.html" class="btn btn-cv" target="_blank">
+                        <span class="cv-icon">📄</span>View My CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">My Expertise</h2>
+            <p class="section-subtitle">Comprehensive quality assurance solutions tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3 class="service-title">Precision Testing</h3>
+                    <p class="service-description">Rooted in discipline, driven by detail. Manual testing isn't about clicking through screens — it's about thinking like the end user while knowing how systems break. I design thoughtful test cases that uncover edge cases, verify workflows, and deliver high product confidence.</p>
+                    <ul class="service-features">
+                        <li>Exploratory & Scenario-based Testing</li>
+                        <li>Cross-device, Cross-browser Validations</li>
+                        <li>Accessibility & Usability Checks</li>
+                        <li>Mobile Web & App Testing on Real Devices</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3 class="service-title">Automation with Intent</h3>
+                    <p class="service-description">Code-backed confidence that scales with your growth. I don't automate for the sake of it. I build purposeful automation frameworks that integrate tightly with your dev pipeline, catch regressions early, and reduce repetitive work.</p>
+                    <ul class="service-features">
+                        <li>Playwright, Selenium, API Automation</li>
+                        <li>Custom-built POM Frameworks</li>
+                        <li>GitHub Actions / Jenkins CI Pipelines</li>
+                        <li>Intelligent Test Reporting & Notifications</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">Quality Engineering Mindset</h3>
+                    <p class="service-description">Beyond test cases — shaping how teams think about quality. As a QA strategist, I partner with product and engineering teams to embed quality into every stage of the SDLC. I help teams ask better questions, make smarter decisions, and deliver better software.</p>
+                    <ul class="service-features">
+                        <li>Risk-based Test Strategy</li>
+                        <li>Metrics that inform, not just report</li>
+                        <li>Test Planning in Agile & Hybrid Environments</li>
+                        <li>Mentorship & QA Process Consulting</li>
+                    </ul>
+                </div>
+
+                <!-- <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Special Focus Areas</h3>
+                    <p class="service-description">Because great testers go beyond the checklist. I specialize in complex testing scenarios that require deep technical knowledge and strategic thinking.</p>
+                    <ul class="service-features">
+                        <li>API-First & Microservices Testing</li>
+                        <li>Security & Data Validation Scenarios</li>
+                        <li>Mobile-Responsive UX Audits</li>
+                        <li>Post-release Testing & Hotfix Verification</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">A curated stack of tools and technologies I work with across manual testing, automation, and QA processes.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-category-icon">🔧</span>
+                        Test Automation
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Selenium WebDriver</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Playwright</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Appium</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PyTest</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Page Object Model</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">TypeScript</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 86%"></div>
+                            </div>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-category-icon">🧪</span>
+                        Manual Testing
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Test Case Design</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 98%"></div>
+                            </div>
+                            <span class="skill-percentage">98%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Exploratory Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Regression Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 97%"></div>
+                            </div>
+                            <span class="skill-percentage">97%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Functional Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 93%"></div>
+                            </div>
+                            <span class="skill-percentage">98%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Web App Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 94%"></div>
+                            </div>
+                            <span class="skill-percentage">96%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Mobile App Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 89%"></div>
+                            </div>
+                            <span class="skill-percentage">93%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-category-icon">🌐</span>
+                        API Testing
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Postman</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Swagger</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">REST Assured</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 87%"></div>
+                            </div>
+                            <span class="skill-percentage">87%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">JSON Schema Validation</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">OAuth / Bearer Token / Auth Testing</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 83%"></div>
+                            </div>
+                            <span class="skill-percentage">83%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <span class="skill-category-icon">⚙️</span>
+                        Tools & Technologies
+                    </h3>
+                    <div class="skill-item">
+                        <span class="skill-name">JIRA</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 96%"></div>
+                            </div>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HP Quality Center</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 89%"></div>
+                            </div>
+                            <span class="skill-percentage">86%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git / GitHub</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 91%"></div>
+                            </div>
+                            <span class="skill-percentage">91%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Jenkins</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Docker</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                            <span class="skill-percentage">78%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">VS Code</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 94%"></div>
+                            </div>
+                            <span class="skill-percentage">94%</span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Chrome DevTools</span>
+                        <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                            <span class="skill-percentage">92%</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="certifications">
+                        <h4 class="certification-title">Certifications</h4>
+                        <div class="certification-badges">
+                            <span class="certification-badge">ISTQB Foundation</span>
+                            <span class="certification-badge">ISTQB Advanced</span>
+                            <span class="certification-badge">Selenium WebDriver</span>
+                            <span class="certification-badge">Agile Testing</span>
+                            <span class="certification-badge">AWS Cloud Practitioner</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="section-title">Recent Projects</h2>
+                <p class="section-subtitle">Proven QA solutions that deliver measurable business impact</p>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-project="bidpath">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🔨</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Bidpath Auction Platform</h3>
+                                <div class="project-duration">7 Years</div>
+                            </div>
+                            <p class="portfolio-description">Led QA transformation for global auction software serving 600+ auctioneers across 27 countries.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">600+</span>
+                                    <span class="metric-label">Clients</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">27</span>
+                                    <span class="metric-label">Countries</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">95%</span>
+                                    <span class="metric-label">Bug Reduction</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Web Application</span>
+                                <span class="tech-tag">Team Leadership</span>
+                                <span class="tech-tag">Test Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="vrplatform">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🥽</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">VR Authoring Platform</h3>
+                                <div class="project-duration">4 Years</div>
+                            </div>
+                            <p class="portfolio-description">Pioneered VR testing methodology for no-code platform used by 30,000+ companies.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">30K+</span>
+                                    <span class="metric-label">Companies</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">6</span>
+                                    <span class="metric-label">VR Platforms</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">99%</span>
+                                    <span class="metric-label">Compatibility</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">VR Testing</span>
+                                <span class="tech-tag">Cross-Platform</span>
+                                <span class="tech-tag">Startup QA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="talkfreely">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">💬</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">TalkFreely Employee Engagement</h3>
+                                <div class="project-duration">2 Years</div>
+                            </div>
+                            <p class="portfolio-description">Streamlined QA process for communication platform, eliminating customer complaints.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Issue Resolution</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">2</span>
+                                    <span class="metric-label">Platforms</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">60%</span>
+                                    <span class="metric-label">Faster Releases</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Mobile + Web</span>
+                                <span class="tech-tag">Cross-Platform</span>
+                                <span class="tech-tag">Process Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="kramtech">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">⚙️</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">KramsTech Development Company</h3>
+                                <div class="project-duration">1.5 Years</div>
+                            </div>
+                            <p class="portfolio-description">Established comprehensive QA processes for UK software development company across multiple projects.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Client Satisfaction</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">65%</span>
+                                    <span class="metric-label">Test Cases Authored</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Major Issues</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Multi-Platform</span>
+                                <span class="tech-tag">QA Processes</span>
+                                <span class="tech-tag">Team Building</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="breas">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🏥</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Breas Medical Devices</h3>
+                                <div class="project-duration">1 Year</div>
+                            </div>
+                            <p class="portfolio-description">Critical testing for respiratory devices used in 40+ countries with zero tolerance for errors.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">40+</span>
+                                    <span class="metric-label">Countries</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Critical Bugs</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Compliance</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Web Application</span>
+                                <span class="tech-tag">Automated Testing</span>
+                                <span class="tech-tag">API Testing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="arootah">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🧘</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">Arootah Digital Wellness</h3>
+                                <div class="project-duration">3 Months</div>
+                            </div>
+                            <p class="portfolio-description">Enhanced UX for digital wellness platform with focus on usability and professional interface design.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Usability Improvement</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">UI Issues</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">95%</span>
+                                    <span class="metric-label">Compatibility</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">Mobile + Web</span>
+                                <span class="tech-tag">UI/UX Testing</span>
+                                <span class="tech-tag">Digital Wellness</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-project="onedollarzone">
+                        <div class="portfolio-image">
+                            <div class="portfolio-image-inner">
+                                <div class="project-icon">🛒</div>
+                                <div class="project-overlay">
+                                    <div class="view-details-btn">View Case Study</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="project-header">
+                                <h3 class="portfolio-title">One Dollar Zone E-commerce</h3>
+                                <div class="project-duration">1 Year</div>
+                            </div>
+                            <p class="portfolio-description">Comprehensive testing for Northeast USA retail chain with 10,000+ product catalog validation.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">10K+</span>
+                                    <span class="metric-label">Products</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">5+</span>
+                                    <span class="metric-label">States</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100%</span>
+                                    <span class="metric-label">Browser Integrity</span>
+                                </div>
+                            </div>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag primary">E-commerce</span>
+                                <span class="tech-tag">Cross-Browser</span>
+                                <span class="tech-tag">Regional Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to elevate your software quality? Let's discuss your project.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>sid@imsiddharth.io</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/siddharthqaexpert/" target="_blank" style="color: var(--accent-cyan); text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.color='var(--text-light)'; this.style.textDecoration='underline'" onmouseout="this.style.color='var(--accent-cyan)'; this.style.textDecoration='none'">Connect with me professionally</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌍</div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Available for remote collaboration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="https://formspree.io/f/xdkogqpv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <!-- Hidden field to specify recipient -->
+                    <input type="hidden" name="_to" value="sid@imsiddharth.io">
+                    <!-- Hidden field to set custom subject -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from QA Website">
+                    <!-- Redirect after successful submission -->
+                    <input type="hidden" name="_next" value="https://imsiddharth.io/siddharth_qa_website.html?success=true#contact">
+                    <!-- Disable captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <button type="submit" class="btn btn-primary" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                    
+                    <!-- Success/Error Messages -->
+                    <div class="form-message" id="form-message" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose">×</button>
+                <span class="modal-project-icon" id="modalIcon">🏦</span>
+                <h2 class="modal-project-title" id="modalTitle">Project Title</h2>
+                <p class="modal-project-subtitle" id="modalSubtitle">Project Subtitle</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📋 Project Overview</h3>
+                    <p class="modal-description" id="modalDescription">
+                        Detailed project description will appear here.
+                    </p>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title">📊 Project Statistics</h3>
+                    <div class="modal-stats" id="modalStats">
+                        <!-- Stats will be populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title">🛠️ Technology Stack</h3>
+                    <div class="modal-tech-stack" id="modalTechStack">
+                        <!-- Tech stack will be populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h3 class="modal-section-title">✨ Key Features Tested</h3>
+                    <ul class="modal-features" id="modalFeatures">
+                        <!-- Features will be populated dynamically -->
+                    </ul>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-challenges">
+                        <h4 class="modal-challenges-title">⚡ Challenges Overcome</h4>
+                        <ul class="modal-challenges-list" id="modalChallenges">
+                            <!-- Challenges will be populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <div class="modal-results">
+                        <h4 class="modal-results-title">🎯 Results Achieved</h4>
+                        <div class="modal-results-grid" id="modalResults">
+                            <!-- Results will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Page Content  -->
-
-    <div id="content" class="p-0 p-md-4 p-md-5 " align="center">
-      <div align="left">
-        <div class="row no-gutters">
-          <div class="col-6">
-            <button type="button" id="sidebarCollapse" class="fa-close"> <i class="fa-bars"></i> <span
-                class="sr-only">Toggle Menu</span> </button>
-          </div>
-          <div class="col-6 bulbcnt" align="right"><a href="#" onClick="myFunction()" class="lightlam"></a>
-          </div>
-          <div class="clear"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Siddharth Thathagar. All rights reserved.</p>
+            <!-- <div class="social-links">
+                <a href="https://www.linkedin.com/in/siddharthqaexpert/" target="_blank" aria-label="LinkedIn">💼</a>
+                <a href="https://github.com/imsiddharth812" aria-label="GitHub">🐙</a>
+                <a href="#" aria-label="Upwork">🐦</a>
+            </div> -->
         </div>
-      </div>
-      <div class="mainpartofdsgn container home-page d-flex align-items-center justify-content-center" align="left">
+    </footer>
 
-        <div class="align-items-center justify-content-between row w-100">
-          <div class="col-lg-8 order-2 maincntbio" align="left">
-            <div class="load1">
-              <div id="notepad"></div>
-            </div>
-            <div class="load1">
-              <p class="bigfont">Hi, <br>
-                I'm Siddharth, <br>
-                Software
-                QA Consultant <a class="flask"></a></p>
-            </div>
-            <div class="w-100 pb-4 load1 clearfix"></div>
-            <div class="btncntainer load3">
-              <button type="button" class="btn btn-secondary"><a href="contact.html">Contact</a></button>
-              &nbsp;
-              <button type="button" class="btn btn-secondary"><a target="_blank"
-                  href="portfolio.html">Portfolio</a></button>
-            </div>
-          </div>
-          <div class="mt-0 mt-md-5 col-lg-4 order-lg-2 order-1 load2">
-            <div class="sidharath-pic"> <img src="images/sidharath.png" class="img-responsive lightmode-elem"> <img
-                src="images/sidharath-dark.png" class="img-responsive darkmode-elem"> </div>
-          </div>
-          <div class="clear"></div>
-        </div> <!-- desktop mode -->
-        <!--div class="align-items-center mt-md-5 row mobile-mode">
-          <div class="col-12 load1" align="center">
-            <div class="sidharath-pic"> <img src="images/sidharath.png" class="img-responsive lightmode-elem"> <img
-                src="images/sidharath-dark.png" class="img-responsive darkmode-elem"> </div>
-          </div>
-          <div class="col-12 maincntbio" align="center">
-            <div class="load2" style="display: block;text-align: left;">
-              <div id="notepad"></div>
-              <p class="bigfont">Hi, <br>
-                I'm Siddharth, <br>
-                Software <br>
-                QA Consultant <a class="flask"></a></p>
-            </div>
-            <div class="w-100 pb-4"></div>
-            <div class="btncntainer load3">
-              <button type="button" class="btn btn-secondary"><a href="contact.html">Contact</a></button>
-              &nbsp;
-              <button type="button" class="btn btn-secondary"><a target="_blank"
-                  href="Siddharth_Thathagar_Resume.pdf">Resume</a></button>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div--> <!-- /mobile mode -->
+    <script>
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
 
+        function openMobileMenu() {
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Add smooth entrance animation
+            setTimeout(() => {
+                mobileMenu.style.transform = 'translateX(0)';
+            }, 10);
+        }
 
-      </div>
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            
+            // Reset transform
+            mobileMenu.style.transform = '';
+        }
 
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
 
-    </div>
-  </div>
-  <script src="js/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(".load1").hide();
-    $(".load2").hide();
-    $(".load3").hide();
-    $(".load4").hide();
-    $(".load5").hide();
-    $(".load6").hide();
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
 
+        // Close menu when clicking on navigation links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Add a small delay to allow smooth scroll to start
+                setTimeout(closeMobileMenu, 100);
+            });
+        });
 
-    setTimeout(function () {
-      $(".load1").fadeIn();
-    }, 600);
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
 
-    setTimeout(function () {
-      $(".load2").fadeIn();
-    }, 800);
+        // Improve touch handling on mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-    setTimeout(function () {
-      $(".load3").fadeIn();
-    }, 1000);
+        mobileMenu.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
 
-    setTimeout(function () {
-      $(".load4").fadeIn();
-    }, 1500);
+        mobileMenu.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
 
-    setTimeout(function () {
-      $(".load5").fadeIn();
-    }, 1700);
+        function handleSwipe() {
+            // If swipe right (closing gesture), close menu
+            if (touchEndX > touchStartX + 50) {
+                closeMobileMenu();
+            }
+        }
 
-    setTimeout(function () {
-      $(".load6").fadeIn();
-    }, 2000);
-  </script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 11, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 11, 0.9)';
+            }
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Allow form to submit naturally to Formspree
+            // The form will handle the actual submission
+        });
+
+        // Check URL for success parameter (when returning from Formspree)
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const formMessage = document.getElementById('form-message');
+            
+            if (urlParams.get('success') === 'true') {
+                formMessage.innerHTML = '✨ Thank you for your message! I\'ll get back to you soon.';
+                formMessage.className = 'form-message success';
+                formMessage.style.display = 'block';
+                
+                // Clear URL parameters after showing message
+                const url = new URL(window.location);
+                url.searchParams.delete('success');
+                window.history.replaceState({}, '', url);
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards, portfolio items, and skill categories
+        document.querySelectorAll('.service-card, .portfolio-item, .skill-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate skill bars on scroll
+        const skillObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 500);
+                    });
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Observe skill categories for progress bar animation
+        document.querySelectorAll('.skill-category').forEach(el => {
+            skillObserver.observe(el);
+        });
+
+        // Project Modal Functionality
+        const projectModal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        // Project data with detailed information
+        const projectData = {
+            bidpath: {
+                icon: '🔨',
+                title: 'Bidpath Auction Platform',
+                subtitle: 'Global Online Auction SAAS Platform',
+                description: 'Led comprehensive QA transformation for the leading global auction software solution serving over 600 auctioneers, retailers, and manufacturers across 27 countries. Built QA team from scratch and established robust testing procedures that revolutionized their product quality.',
+                stats: [
+                    { number: '600+', label: 'Global Clients' },
+                    { number: '27', label: 'Countries Served' },
+                    { number: '7', label: 'Years Leadership' },
+                    { number: '95%', label: 'Bug Reduction' }
+                ],
+                techStack: ['Web Application Testing', 'Cross Browser Testing', 'JIRA', 'TestLink', 'Trello', 'Playwright','Typescript', 'Postman', 'Team Building'],
+                features: [
+                    'Complete auction management workflows',
+                    'Multi-currency bidding systems',
+                    'Real-time auction monitoring',
+                    'Payment processing integration',
+                    'Inventory management systems',
+                    'Cross-browser compatibility',
+                    'Mobile-responsive auction interface',
+                    'Administrative reporting dashboards'
+                ],
+                challenges: [
+                    'Lack of proper test coverage jeopardizing auction processes',
+                    'Major bugs reaching clients due to inadequate QA approach',
+                    'Absence of senior QA leadership and guidance',
+                    'No structured testing procedures in place'
+                ],
+                results: [
+                    { value: '95%', label: 'Test Coverage' },
+                    { value: '0', label: 'Critical Bugs' },
+                    { value: '600+', label: 'Happy Clients' },
+                    { value: '27', label: 'Countries' }
+                ]
+            },
+            vrplatform: {
+                icon: '🥽',
+                title: 'VR Authoring Platform',
+                subtitle: 'Interactive SAAS Tool for VR App Development',
+                description: 'Pioneered QA department and testing methodology for a confidential SAAS-based interactive authoring tool used by over 30,000 companies. Specialized in VR platform testing across multiple devices including Oculus, HTC Vive, Samsung GearVR, and Google platforms.',
+                stats: [
+                    { number: '30K+', label: 'Companies Using' },
+                    { number: '6+', label: 'VR Platforms' },
+                    { number: '4', label: 'Years Experience' },
+                    { number: '99%', label: 'Platform Compatibility' }
+                ],
+                techStack: ['VR Testing', 'Web Application Testing', 'Mantis', 'VR Devices', 'Oculus', 'HTC Vive', 'Samsung GearVR'],
+                features: [
+                    'No-code VR application builder',
+                    'Multi-platform VR compatibility',
+                    'Interactive authoring interface',
+                    'Cross-device VR testing',
+                    'Real-time VR preview',
+                    'Asset management system',
+                    'Publishing workflow automation',
+                    'VR experience analytics'
+                ],
+                challenges: [
+                    'Complex VR device integration testing requirements',
+                    'Startup environment requiring QA department setup',
+                    'Specialized VR domain knowledge requirement',
+                    'Multiple platform compatibility challenges'
+                ],
+                results: [
+                    { value: '100%', label: 'QA Setup Success' },
+                    { value: '30K+', label: 'Companies Served' },
+                    { value: '6', label: 'VR Platforms' },
+                    { value: '95%', label: 'Bug Detection' }
+                ]
+            },
+            talkfreely: {
+                icon: '💬',
+                title: 'TalkFreely Employee Engagement',
+                subtitle: 'Internal Communication Platform',
+                description: 'Streamlined QA processes for TalkFreely, an employee engagement application designed for effective organizational communication. Eliminated customer complaints by implementing comprehensive testing across web and mobile platforms.',
+                stats: [
+                    { number: '100%', label: 'Issue Resolution' },
+                    { number: '2', label: 'Platform Coverage' },
+                    { number: '2', label: 'Years Partnership' },
+                    { number: '0', label: 'Customer Complaints' }
+                ],
+                techStack: ['Web App Testing', 'Mobile App Testing', 'Bugzilla', 'Cross-Platform Testing', 'Cross-Browser Testing', 'Playwright', 'Typescript'],
+                features: [
+                    'Real-time organizational communication',
+                    'Cross-platform messaging system',
+                    'Employee engagement analytics',
+                    'Mobile and web synchronization',
+                    'Admin management interfaces',
+                    'Notification systems',
+                    'User permission management',
+                    'Communication workflow automation'
+                ],
+                challenges: [
+                    'Customer complaints about major functions failing',
+                    'Quality issues affecting customer retention and revenue',
+                    'Cross-platform compatibility problems',
+                    'Need for streamlined QA processes'
+                ],
+                results: [
+                    { value: '100%', label: 'Customer Satisfaction' },
+                    { value: '0', label: 'Function Failures' },
+                    { value: '60%', label: 'Faster Releases' },
+                    { value: '2', label: 'Platforms Mastered' }
+                ]
+            },
+            kramtech: {
+                icon: '⚙️',
+                title: 'Krams Tech - Software Development Company',
+                subtitle: 'Software & App Development Services',
+                description: 'Established comprehensive QA processes for UK-based software development company. Provided testing expertise across multiple client projects, ensuring quality delivery and customer satisfaction through thorough testing methodologies.',
+                stats: [
+                    { number: '100%', label: 'Client Satisfaction' },
+                    { number: '1.5', label: 'Years Partnership' },
+                    { number: '65%', label: 'Test Cases Authored' },
+                    { number: '0', label: 'Major Issues Post-Launch' }
+                ],
+                techStack: ['Multi-Platform Testing', 'JIRA', 'HP ALM', 'Playwright', 'Typescript','Selenium', 'Test Automation','Postman', 'API Testing'],
+                features: [
+                    'End-to-end project testing coverage',
+                    'Cross-platform compatibility validation',
+                    'UI/UX testing and feedback',
+                    'Integration testing workflows',
+                    'Acceptance testing protocols',
+                    'Regression testing automation',
+                    'Quality process establishment',
+                    'Team mentoring and knowledge transfer'
+                ],
+                challenges: [
+                    'No existing QA engineer in development team',
+                    'Customer dissatisfaction due to lack of testing',
+                    'Need for rapid domain understanding across projects',
+                    'Establishing QA processes from ground up'
+                ],
+                results: [
+                    { value: '100%', label: 'Process Efficiency' },
+                    { value: '3', label: 'QA Team Members' },
+                    { value: '65%', label: 'Test Coverage' },
+                    { value: '95%', label: 'Issue Detection Rate' }
+                ]
+            },
+            breas: {
+                icon: '🏥',
+                title: 'Breas Medical Devices',
+                subtitle: 'Life-Critical Healthcare Testing',
+                description: 'Conducted precision testing for Breas medical devices - a global leader in Home Mechanical Ventilation, Airway Clearance and Sleep therapy. Zero-tolerance testing for life-critical respiratory monitoring applications used in 40+ countries.',
+                stats: [
+                    { number: '40+', label: 'Countries Deployed' },
+                    { number: '25+', label: 'Years Device Heritage' },
+                    { number: '0', label: 'Critical Defects' },
+                    { number: '100%', label: 'Compliance Rate' }
+                ],
+                techStack: ['Functional Testing', 'JIRA', 'Zephyr', 'Selenium', 'Python', 'GitHub', 'Swagger', 'API Testing'],
+                features: [
+                    'Bi-Level Ventilator integration testing',
+                    'Web and mobile application testing',
+                    'Patient health monitoring systems',
+                    'Real-time respiratory data validation',
+                    'Medical device connectivity',
+                    'Regulatory compliance verification',
+                    'Cross-platform compatibility',
+                    'Clinical workflow integration'
+                ],
+                challenges: [
+                    'Zero tolerance for errors in life-critical applications',
+                    'Complex healthcare domain requirements',
+                    'Detailed test scenario development for patient safety',
+                    'Integration testing with medical hardware'
+                ],
+                results: [
+                    { value: '0', label: 'Critical Bugs' },
+                    { value: '100%', label: 'Patient Safety' },
+                    { value: '40+', label: 'Countries' },
+                    { value: '99.9%', label: 'Reliability' }
+                ]
+            },
+            arootah: {
+                icon: '🧘',
+                title: 'Arootah Digital Wellness',
+                subtitle: 'Online Coaching & Business Consulting Platform',
+                description: 'Enhanced user experience for Arootah, a digital wellness platform headquartered in New York. Focused on usability testing and UI improvements to create a professional, user-friendly interface for their coaching programs.',
+                stats: [
+                    { number: '100%', label: 'Usability Improvement' },
+                    { number: '11', label: 'Months Duration' },
+                    { number: '0', label: 'Critical UI Issues' },
+                    { number: '95%', label: 'Browser Compatibility' }
+                ],
+                techStack: ['Functional Testing', 'Cross-Browser Testing', 'UI Testing', 'ClickUp', 'Selenium', 'Python', 'Pytest', 'API Testing'],
+                features: [
+                    'Digital wellness program testing',
+                    'User interface optimization',
+                    'Cross-browser compatibility validation',
+                    'Usability heuristic evaluation',
+                    'Interactive element testing',
+                    'Professional web application standards',
+                    'User journey optimization',
+                    'Responsive design validation'
+                ],
+                challenges: [
+                    'Designing user-friendly interactive interface',
+                    'Eliminating showstopper and critical issues',
+                    'Ensuring professional web application standards',
+                    'Cross-browser compatibility requirements'
+                ],
+                results: [
+                    { value: '100%', label: 'User Satisfaction' },
+                    { value: '0', label: 'UI Issues' },
+                    { value: '95%', label: 'Performance Score' },
+                    { value: '100%', label: 'Compatibility' }
+                ]
+            },
+            onedollarzone: {
+                icon: '🛒',
+                title: 'One Dollar Zone E-commerce',
+                subtitle: 'Regional E-commerce Platform',
+                description: 'Comprehensive testing for OneDollarZone, a family-operated variety store chain across Northeast USA. Validated e-commerce platform integrity and ensured seamless user experience for 10,000+ product catalog.',
+                stats: [
+                    { number: '10K+', label: 'Products Tested' },
+                    { number: '5+', label: 'States Coverage' },
+                    { number: '1', label: 'Year Duration' },
+                    { number: '100%', label: 'Browser Integrity' }
+                ],
+                techStack: ['E-commerce Testing', 'Selenium', 'Python', 'Mantis', 'TestLink', 'Cross-Browser Testing', 'Postman', 'API Testing'],
+                features: [
+                    'E-commerce workflow validation',
+                    'Product catalog testing',
+                    'Shopping cart functionality',
+                    'Payment gateway integration',
+                    'Regional availability testing',
+                    'Desktop browser compatibility',
+                    'User experience optimization',
+                    'Manual test case execution'
+                ],
+                challenges: [
+                    'Testing new online e-commerce application',
+                    'Ensuring website integrity across browsers',
+                    'Providing usability feedback for novice users',
+                    'Regional-specific functionality validation'
+                ],
+                results: [
+                    { value: '100%', label: 'Website Integrity' },
+                    { value: '5', label: 'Browser Support' },
+                    { value: '65%', label: 'Test Cases Authored' },
+                    { value: '95%', label: 'User Experience Score' }
+                ]
+            }
+        };
+
+        // Open modal function
+        function openModal(projectKey) {
+            const project = projectData[projectKey];
+            if (!project) return;
+
+            // Populate modal content
+            document.getElementById('modalIcon').textContent = project.icon;
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalSubtitle').textContent = project.subtitle;
+            document.getElementById('modalDescription').textContent = project.description;
+
+            // Populate stats
+            const statsContainer = document.getElementById('modalStats');
+            statsContainer.innerHTML = project.stats.map(stat => `
+                <div class="modal-stat">
+                    <span class="modal-stat-number">${stat.number}</span>
+                    <span class="modal-stat-label">${stat.label}</span>
+                </div>
+            `).join('');
+
+            // Populate tech stack
+            const techStackContainer = document.getElementById('modalTechStack');
+            techStackContainer.innerHTML = project.techStack.map(tech => `
+                <span class="modal-tech-tag">${tech}</span>
+            `).join('');
+
+            // Populate features
+            const featuresContainer = document.getElementById('modalFeatures');
+            featuresContainer.innerHTML = project.features.map(feature => `
+                <li>${feature}</li>
+            `).join('');
+
+            // Populate challenges
+            const challengesContainer = document.getElementById('modalChallenges');
+            challengesContainer.innerHTML = project.challenges.map(challenge => `
+                <li>${challenge}</li>
+            `).join('');
+
+            // Populate results
+            const resultsContainer = document.getElementById('modalResults');
+            resultsContainer.innerHTML = project.results.map(result => `
+                <div class="modal-result-item">
+                    <span class="modal-result-value">${result.value}</span>
+                    <span class="modal-result-label">${result.label}</span>
+                </div>
+            `).join('');
+
+            // Show modal
+            projectModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal function
+        function closeModal() {
+            projectModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners for portfolio items
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const projectKey = item.getAttribute('data-project');
+                openModal(projectKey);
+            });
+        });
+
+        // Event listeners for modal close
+        modalClose.addEventListener('click', closeModal);
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
-
 </html>
