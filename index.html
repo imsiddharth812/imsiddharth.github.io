@@ -1670,6 +1670,15 @@
         }
     </style>
 
+    <!-- Google Consent Mode (default: denied) - must be before GA4 -->
+    <script>
+      window.gtag = window.gtag || function(){(window.dataLayer = window.dataLayer || []).push(arguments);}
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+
     <!-- Google Tag Manager -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTKFWTNVN4"></script>
     <script>
@@ -2484,6 +2493,41 @@
             </div> -->
         </div>
     </footer>
+
+    <!-- Consent Banner HTML -->
+    <div id="consent-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1rem;z-index:9999;display:none;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <span>
+        This website uses cookies for analytics. <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer" style="color:#00d4ff;">Learn more</a>
+      </span>
+      <button id="consent-accept" style="background:#00d4ff;color:#222;padding:0.5rem 1rem;border:none;border-radius:5px;cursor:pointer;">Accept</button>
+      <button id="consent-decline" style="background:#444;color:#fff;padding:0.5rem 1rem;border:none;border-radius:5px;cursor:pointer;">Decline</button>
+    </div>
+
+    <!-- Consent Banner JS -->
+    <script>
+      // Show banner if not already set
+      if (!localStorage.getItem('cookie_consent')) {
+        document.getElementById('consent-banner').style.display = 'flex';
+      }
+
+      document.getElementById('consent-accept').onclick = function() {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'analytics_storage': 'granted'
+        });
+        localStorage.setItem('cookie_consent', 'granted');
+        document.getElementById('consent-banner').style.display = 'none';
+      };
+
+      document.getElementById('consent-decline').onclick = function() {
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied'
+        });
+        localStorage.setItem('cookie_consent', 'denied');
+        document.getElementById('consent-banner').style.display = 'none';
+      };
+    </script>
 
     <script>
         // Mobile menu functionality
